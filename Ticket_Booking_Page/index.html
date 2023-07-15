@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket booking page</title>
+    <link rel="stylesheet" href="/Styles/Shared_styles/shared_styles.css">
+    <link rel="stylesheet" href="/Styles/ticket_booking_page.css">
+    <script src="/scripts/generate_page.js" defer></script>
+    <script src="/scripts/handle_next.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-img">
+                <img src="/images/7c829fba9e354e7d96fe6a44cd79f823.png" alt="logo">
+            </div>
+            <div class="nav-links">
+                <ul class="nav-links-li">
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="/Homepage/index.html">Home</a></li>
+                    <li><a href="#">Flights</a></li>
+                    <li><a href="#">Bookings</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><span class="bordered-link"><a href="#">Sign up</a></span></li>
+                    <li><a href="#">En</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="page-container">
+            <div class="travel-banner">
+                <h1>Hey <span class="customer-name">John!</span></h1>
+                <p>Where do you want to go?</p>
+                <img src="/icons/Image.svg" alt="banner image" height="42px" width="42px">
+            </div>
+            <div class="travel-info-input">
+                
+            </div>
+            <div class="travel-info">
+                <form action="#">
+                    <div class="travel-inpt page-fx">
+                        <input type="text" name="#" id="travel-from" placeholder="Travelling from">
+                        <input type="text" name="#" id="travel-to" placeholder="Travelling to">
+                    </div>
+                    <div class="travel-dates page-fx-2">
+                        <button type="button" class="addDate">Today</button>
+                        <button type="button" class="addDate">Tomorrow</button>
+                        <input type="date" name="#" id="travel-date">
+                    </div>
+                    <div class="checkout-routes-btn page-fx">
+                        <button type="submit" id="next-button">Find Buses</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

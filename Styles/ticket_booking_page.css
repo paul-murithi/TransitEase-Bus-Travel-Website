@@ -1,0 +1,91 @@
+.page-container {
+    display: flex;
+    height: 100vh;
+    position: relative;
+}
+.travel-banner {
+    background: #ff6260;
+    color: #fff;
+    flex: 2 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.travel-banner h1 {
+    font-size: 3rem;
+}
+
+.travel-info-input {
+   flex: 1 1 0;
+}
+.page-fx {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+.travel-info {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #f5a522;
+    border-radius: 1rem;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    height: 20rem;
+    width: 45rem;
+}
+.travel-inpt input {
+    margin-top: 0.5rem;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    outline: none;
+    font-size: 1rem;
+}
+.page-fx-2 {
+    display: flex;
+    justify-content: space-evenly;
+}
+.page-fx-2 button {
+    background-color: #f5a522;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+}
+.checkout-routes-btn button {
+    background-color: #ff6260;
+    color: #fff;
+    padding: 0.8rem;
+}
+@media (max-width: 900px) {
+    .page-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .travel-info {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20rem;
+        height: 20rem;
+    }
+    .travel-banner {
+        flex: 1 0 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .travel-info-input {
+        flex: 1 0 0;
+    }
+    .nav-links ul li {
+        display: none;
+    }
+    .nav-img {
+        margin-bottom: 10px;
+    }
+
+}
