@@ -1,0 +1,112 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-image: url(/images/juan-encalada-6mcVaoGNz1w-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+button {
+    width: 40%;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: #000;
+    color: #fff;
+    font-size: large;
+    transition: transform 0.3s ease-in-out;
+    padding: 0.3rem;
+}
+button:hover {
+    background-color: #fff;
+    color: #000;
+    border: 1.5px solid #000;
+    transform: scale(1.025);
+}
+.login-navigation-main {
+    height: 1.3rem;
+}
+.login-navigation {
+    display: flex;
+    justify-content: space-evenly;
+}
+.login-navigation li {
+    list-style-type: none;
+    text-transform: capitalize;
+}
+.login-navigation li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.login-navigation li a:hover{
+    border-bottom: 2px solid #fff;
+    color: #4d4b4b;
+}
+
+.login-heading {
+    text-align: center;
+    position: relative;
+}
+.login-heading h1 {
+    position: absolute;
+    top: 45px;
+    left: 40%;
+}
+.parent-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-container {
+    width: 30%;
+    background-color: #fff;
+    opacity: 0.7;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px #0b0b0b;
+}
+.login-form {
+    height: 28rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.login-form input {
+    margin: 0.6rem;
+    height: 2rem;
+    opacity: 1;
+    text-align: start;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+}
+input:focus {
+    height: 2.5rem;
+    border-bottom: 2px solid #0b0b0b;
+}
+.login-form label {
+    color: #000;
+    text-align: center;
+}
+.login-submit-btn {
+    margin-top: 2rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+.login-sign-up {
+    position: relative;
+
+}
+.login-sign-up p {
+    position: absolute;
+    bottom: 4rem;
+    
+}
+.login-sign-up p a {
+    text-decoration: none;
+}

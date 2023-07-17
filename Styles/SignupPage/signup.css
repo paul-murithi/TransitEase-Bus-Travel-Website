@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body {
+    background-image: url(/images/tops-3720049_1920.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+.signup-nav {
+    display: flex;
+    justify-content: space-around;
+    height: 4rem;
+    align-items: center;
+}
+.signup-nav li {
+    list-style: none;
+}
+.signup-nav li a {
+    text-decoration: none;
+    color: #000;
+    transition: 150ms ease-in-out;
+}
+.signup-nav li a:active {
+    border-bottom: 2px solid #000;
+}
+.signup-nav li a:hover {
+    border-bottom: 2px solid #000;
+    transform: scaleX(0.75);
+}
+form input {
+    margin-top: 3rem;
+    width: 15rem;
+    border: none;
+    border-bottom: 1.5px solid #808080;
+    outline: none;
+    font-size: large;
+}
+form input:focus {
+    border-bottom: 2px solid #000;
+}
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 28rem;
+    width: 30rem;
+    background-color: #fff;
+    margin: auto;
+    margin-top: 3rem;
+    border-radius: 2rem;
+}
+.signup-container .signup-heading-par {
+    color: #808080;
+    margin-top: 1rem;
+}
+.signup-container form {
+    display: flex;
+    flex-direction: column;
+}
+.signup-container .submit-btns-1 {
+    background-color: #373636;
+    color: #fff;
+    margin-top: 3rem;
+    border: none;
+    height: 2rem;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.signup-container .submit-btns-1:hover {
+    background-color: #000;
+    border: 2px solid #878787;
+}
+.signup-container .submit-btns-2 {
+    color: #000;
+    margin-top: 2rem;
+    border: 2px solid #000;
+    height: 2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+.signup-container .submit-btns-2:hover {
+    background-color: #c6c6c6;
+    border: 2px solid #878787;
+}
