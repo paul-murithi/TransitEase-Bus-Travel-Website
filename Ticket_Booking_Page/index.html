@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="/Styles/Shared_styles/shared_styles.css">
     <link rel="stylesheet" href="/Styles/TicketBookingPage/ticket_booking_page.css">
     <script src="/scripts/generate_page.js" defer></script>
-    <script src="/scripts/handle_next.js" defer></script>
     <script src="/scripts/generata_navigation.js" defer></script>
+    <script src="/scripts/select_seats.js"></script>
 </head>
 <body>
     <header>
@@ -27,16 +27,17 @@
             <div class="travel-info">
                 <form action="#">
                     <div class="travel-inpt page-fx">
-                        <input type="text" name="#" id="travel-from" placeholder="Travelling from">
-                        <input type="text" name="#" id="travel-to" placeholder="Travelling to">
+                        <input type="text" name="#" id="inpt-frm" placeholder="Travelling from">
+                        <input type="text" name="#" id="inpt-to" placeholder="Travelling to">
                     </div>
                     <div class="travel-dates page-fx-2">
                         <button type="button" class="addDate">Today</button>
                         <button type="button" class="addDate">Tomorrow</button>
-                        <input type="date" name="#" id="travel-date">
+                        <input type="date" name="#" id="inpt-date">
                     </div>
                     <div class="checkout-routes-btn page-fx">
-                        <button type="submit" id="next-button">Find Buses</button>
+                        <button type="submit" id="bkn-page-search-btn">Find Buses</button>
+                        <a href="select_class.html" style="color: black;">Find buses</a>
                     </div>
                 </form>
             </div>
