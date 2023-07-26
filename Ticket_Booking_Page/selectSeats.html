@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Select seat</title>
     <link rel="stylesheet" href="/Styles/TicketBookingPage/selectSeat/selectSeat.css">
+    <link rel="stylesheet" href="/Styles/Shared_styles/shared_styles.css">
 </head>
 <body>
+    <header>
+        <div class="js-nav-load"></div>
+    </header>
     <div class="travelling-info-banner">
         <h1>Select your seat</h1>
         <div class="destinations">
-            <p id="Travel-from">Nairobi</p>
-            <img src="/icons/Play button.svg" alt="#">
-            <p id="travel-to">Mombasa</p>
+            <p id="Travel-from"></p>
+            <img src="/images/icons8-bus-100 1.png" alt="bus icon">
+            <p id="travel-to"></p>
         </div>
-        <p id="travel-date">12th-jan-2023 | Monday</p>
+        <p id="travel-date" class="date-style"></p>
         <div class="travel-info">
                 <h1>Time of travel</h1>
                 <p><span id="travel-time">6:00PM <span class="grayed-time">3:00PM</span></span></p>
@@ -26,7 +30,7 @@
                 <p>9 hours</p>
         </div>
     </div>
-    <a href="/Ticket_Booking_Page/index.html">Home Booking page</a>
+    <p id="result"></p>
     <div class="display-seats-container">
         <div class="seat-row-item">
             <table id="table-container">
@@ -60,8 +64,8 @@
 
                 <tr class="row-4">
                     <td><div class="seat test-seat">13</div></td>
-                    <td><div class="seat test-seat">14</div></td>
-                    <td><div class="seat test-seat">15</div></td>
+                    <td><div class="booked seat test-seat">14</div></td>
+                    <td><div class="booked seat test-seat">15</div></td>
                     <td class="no-border"></td>
                     <td><div class="seat test-seat">16</div></td>
                     <td><div class="seat test-seat">17</div></td>
@@ -72,7 +76,7 @@
                     <td><div class="seat test-seat">20</div></td>
                     <td class="no-border"></td>
                     <td><div class="seat test-seat">21</div></td>
-                    <td><div class="seat test-seat">22</div></td>
+                    <td><div class="booked seat test-seat">22</div></td>
                 </tr>
                 <tr class="row-6">
                     <td><div class="seat test-seat">23</div></td>
@@ -88,7 +92,7 @@
                     <td><div class="seat test-seat">30</div></td>
                     <td class="no-border"></td>
                     <td><div class="seat test-seat">31</div></td>
-                    <td><div class="seat test-seat">32</div></td>
+                    <td><div class="booked seat test-seat">32</div></td>
                 </tr>
                 <tr class="row-8">
                     <td><div class="seat test-seat">33</div></td>
@@ -109,12 +113,30 @@
             </table>
         </div>
         <div class="show-booking-information">
+            <div class="select-seat-key">
+                <div class="key-map">
+                    <div class="keys vip-key"></div>
+                    <span>VIP seats</span>
+                </div>
+                <div class="key-map">
+                    <div class="keys available-key"></div>
+                    <span>Available seats</span>
+                </div>
+                <div class="key-map">
+                    <div class="keys selected-seat-key"></div>
+                    <span>Your selected seats</span>
+                </div>
+                <div class="key-map">
+                    <div class="keys booked-key"></div>
+                    <span>Booked seats</span>
+                </div>
+            </div>
             <!-- <p>Seat Number: <span class="tomato-display" id="display-seat-number"></span></p> -->
-            <p>Amount: <span class="tomato-display" id="js-display-amount"></span></p>
+            <!-- <p>Amount: <span class="tomato-display" id="js-display-amount"></span></p>
             <p>Travelling to: <span class="tomato-display" id="js-display-travelling-to"></span></p>
             <p>Travelling from: <span id="js-display-travelling-from" class="tomato-display"></span></p>
             <p>Date: <span class="tomato-display" id="js-display-travelling-date"></span></p>
-            <p>Travelling class: <span class="tomato-display" id="js-display-travelling-class"></span></p>
+            <p>Travelling class: <span class="tomato-display" id="js-display-travelling-class"></span></p> -->
             <!-- <form action="#">
                 <label for="feedback">Thankyou for using this service, leave a feedback.(optional)</label>
                 <textarea name="feedback-area" id="feedback" cols="30" rows="10"></textarea>
@@ -127,5 +149,7 @@
     
             <!------------------------------->
     </div>
+    <script src="/scripts/TicketBookingPage/generatepage.js"></script>
+    <script src="/scripts/General scripts/generate_navigation.js"></script>
 </body>
 </html>

@@ -9,27 +9,6 @@ body {
     background-position: center;
     height: 100vh;
 }
-.signup-nav {
-    display: flex;
-    justify-content: space-around;
-    height: 4rem;
-    align-items: center;
-}
-.signup-nav li {
-    list-style: none;
-}
-.signup-nav li a {
-    text-decoration: none;
-    color: #000;
-    transition: 150ms ease-in-out;
-}
-.signup-nav li a:active {
-    border-bottom: 2px solid #000;
-}
-.signup-nav li a:hover {
-    border-bottom: 2px solid #000;
-    transform: scaleX(0.75);
-}
 form input {
     margin-top: 3rem;
     width: 15rem;
