@@ -134,16 +134,22 @@ td,.booked,.vip {
 .booked-key {
     background-color: #f5a522;
 }
-
+.check-out-btn-item {
+    width: 170%;
+}
 .check-out-btn-item button {
     margin-top: 3rem;
     transition: 350ms;
-    padding: 8px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 1rem;
+    background-color: #000;
+    color: #FFF;
 }
 .check-out-btn-item button:hover {
-    background-color: #fff;
-    border: 1px solid #000;
-    color: #000;
+    background-color: hsl(0, 0%, 10%);
+    color: #FFF;
+    box-shadow: 0.5px 0.5px 1px 1px #000000;
 }
 .no-border {
     background-color: #f6f4f0;

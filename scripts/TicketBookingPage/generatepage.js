@@ -44,7 +44,8 @@ function getSelectedSeats() {
 // Save the selected seats
 function saveSelectedSeats(seats) {
   // You can store the selected seat numbers in a variable, send them to the server, or perform any other required action.
-  console.log('Selected seats:', seats);
+  // console.log('Selected seats:', seats);
+  showCheckoutPage(seats);
 }
 
 // Proceed button click event
@@ -55,5 +56,18 @@ proceedButton.addEventListener('click', handleProceed);
 function handleProceed() {
   const selectedSeats = getSelectedSeats();
   saveSelectedSeats(selectedSeats);
+}
+
+
+/*##########################################################*/
+function showCheckoutPage(seats){
+  if(seats != ""){
+    console.log("You have chose seat: " + seats);
+    const url = `checkout.html?seatNumber=${encodeURIComponent(seats)}`;
+    window.location.href = url;
+  }
+  else {
+    alert("Please choose a seat");
+  }
 }
 

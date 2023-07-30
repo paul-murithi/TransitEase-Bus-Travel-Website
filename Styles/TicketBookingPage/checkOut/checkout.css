@@ -1,0 +1,27 @@
+body {
+    background-color: aliceblue;
+}
+.main-grid-wrap > * {
+    height: 200px;
+    width: 95%;
+    margin-top: 1rem;
+    border-radius: 1rem;
+}
+.main-grid-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+    place-items: center;
+}
+.payment-info-details {
+    background-color: rgb(163, 161, 161);
+    grid-row: span 2;
+    height: 100%;
+}
+.booking-info-details {
+    background-color: #5e5c5c;
+}
+.checkout-details {
+    background-color: #424141;
+}
