@@ -31,7 +31,6 @@ function validateForm() {
     if (!phoneNumberPattern.test(phoneNumberInput.value)) {
       errorMessageContainer.innerHTML = 'Phone Number should contain exactly 10 digits.';
       return;
-    }
-  
+    } 
 }
   
