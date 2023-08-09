@@ -335,20 +335,6 @@ textarea {
         display: none;
     }
 }
-@media (max-width: 845px) {
-    .category-services, .top-destinations, .booking-info, .testimonials {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .top-destinations, .testimonials {
-        gap: 1rem;
-    }
-    footer {
-        display: flex;
-        flex-direction: column;
-    }
-}
 @media (max-width: 700px) {
     .category-services {
         display: flex;
@@ -374,7 +360,7 @@ textarea {
     width: 11.25rem;
     height: 3.25rem;
     border-radius: 0.625rem;
-    background: var(--gradient, linear-gradient(180deg, #FF946D 0%, #FF7D68 100%));
+    background: rgb(255, 105, 51);
     color: var(--white, #FFF);
     text-align: center;
     font-family: sans-serif;
@@ -384,7 +370,7 @@ textarea {
     opacity: 1;
 }
 .feedback-form button:hover {
-    background: rgb(255, 121, 72);
+    background: rgb(246, 133, 91);
     color: #fff;
 }
 footer {
@@ -399,12 +385,15 @@ footer .name-logo {
     font-size: 2.75rem;
     font-weight: 500;
 }
-.ft-links ul img {
+.ft-links .ft-wrap ul img {
     height: 42px;
     width: 42px;
 }
-.ft-links ul li {
+.ft-links .ft-wrap ul li {
     padding: 0.5rem;
+}
+.ft-links .ft-wrap h1 {
+    display: none;
 }
 
 .links {
@@ -418,4 +407,28 @@ footer .name-logo {
 }
 .company-logo h3 {
     color: #080809;
+}
+
+
+@media (max-width: 845px) {
+    .category-services, .top-destinations, .booking-info, .testimonials {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .top-destinations, .testimonials {
+        gap: 1rem;
+    }
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .ft-links .ft-wrap {
+        display: flex;
+        flex-direction: column;
+    }
+    .ft-links .ft-wrap h1 {
+        display: block;
+    }
 }

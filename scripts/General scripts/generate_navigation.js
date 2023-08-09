@@ -13,7 +13,7 @@ navigationContainer.appendChild(navigationLinks);
 navigationLinks.appendChild(navigationUnorderedList);
 
 const navigationItems = ["Home", "Destinations","Flights", "Book now","Log in", "Sign up", "Products"];
-const pageNames = ["/Homepage/index", "#", "#", "/Ticket_Booking_page/index", "/login_page/index", "/Sign up/index", "#"];
+const pageNames = ["/Pages/Homepage/index", "#", "#", "/Pages/Ticket_Booking_page/index", "/Pages/login_page/index", "/Pages/Sign up/index", "#"];
 
 for (let i = 0; i < navigationItems.length; i++) {
   const listItem = document.createElement('li');
