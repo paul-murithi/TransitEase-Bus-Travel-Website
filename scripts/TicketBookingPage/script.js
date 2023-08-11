@@ -16,10 +16,14 @@ function navigateToSelectSeat() {
     inpt_date = document.getElementById('inpt-date').value;
 
     // Construct the URL with parameters
-    const url = `selectSeats.html?to=${encodeURIComponent(inpt_to)}&from=${encodeURIComponent(inpt_from)}&date=${encodeURIComponent(inpt_date)}`;
-    
-    // Navigate to the selectSeat.html page
-    window.location.href = url;
+    if (inpt_to && inpt_from && inpt_date){
+        const url = `selectSeats.html?to=${encodeURIComponent(inpt_to)}&from=${encodeURIComponent(inpt_from)}&date=${encodeURIComponent(inpt_date)}`;
+        // Navigate to the selectSeat.html page
+        window.location.href = url;
+    }
+    else {
+        alert("Please fill out all inputs");
+    }
 }
 
 

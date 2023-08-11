@@ -432,3 +432,8 @@ footer .name-logo {
         display: block;
     }
 }
+@media (max-width: 800px) {
+    .js-nav-load {
+        display: none;
+    }
+}
