@@ -19,7 +19,7 @@ for (let i = 0; i < navigationItems.length; i++) {
   const listItem = document.createElement('li');
   const anchor = document.createElement('a');
   anchor.innerText = navigationItems[i];
-  anchor.href = pageNames[i] + ".html"; // Set the href attribute
+  anchor.href = pageNames[i] + ".html";
   listItem.appendChild(anchor);
   navigationUnorderedList.appendChild(listItem);
 }
