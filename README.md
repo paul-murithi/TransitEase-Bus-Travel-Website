@@ -25,7 +25,6 @@ The TransitEase Travel Agency Website is built using the following technologies:
 - Backend: Java Spring Boot
 - Database: MySQL
 - Version Control: Git
-- Hosting: GitHub Pages
 
 ## Installation and Setup
 

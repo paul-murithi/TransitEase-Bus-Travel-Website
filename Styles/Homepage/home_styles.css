@@ -292,6 +292,70 @@ main {
     color: #f5853d;
     font-size: 1.5rem;
 }
+.hr-line {
+    border: 1px solid black;
+    margin: 2rem 0;
+}
+
+ul {
+    list-style-type: none;
+}
+img {
+    max-width: 100%;
+}
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+}
+.links > * {
+    text-align: center;
+    padding: 0.5rem;
+}
+.links img {
+    height: 28px;
+    width: 28px;
+}
+.company-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.company-logo > * {
+    text-align: center;
+    margin: 0;
+}
+.author {
+    text-align: center;
+}
+
+@media (max-width: 1040px){
+    footer {
+        display: grid;
+        grid-template-columns: repeat(3,auto);
+        grid-template-rows: repeat(2, auto);
+    }
+    .company-logo {
+        grid-column: span 2;
+    }
+}
+@media (max-width: 600px){
+    footer {
+        display: grid;
+        grid-template-columns: repeat(2,auto);
+        grid-template-rows: repeat(3, auto);
+    }
+    .company-logo {
+        grid-column: span 2;
+    }
+}
+
+
+
+
+
+
+
 @media (max-width: 840px) {
     .main {
         display: flex;
@@ -322,41 +386,6 @@ main {
         background-color: #fff1da;
     }
 }
-footer {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 3rem;
-    border-top: 1px solid var(--3rd, #14183E);
-}
-footer .name-logo {
-    color: var(--1st, #181E4B);
-    font-family: Poppins;
-    font-size: 2.75rem;
-    font-weight: 500;
-}
-.ft-links .ft-wrap ul img {
-    height: 42px;
-    width: 42px;
-}
-.ft-links .ft-wrap ul li {
-    padding: 0.5rem;
-}
-.ft-links .ft-wrap h1 {
-    display: none;
-}
-
-.links {
-    display: flex;
-    flex-direction: column;
-}
-.company-logo {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-.company-logo h3 {
-    color: var(--black, #080809);
-}
 
 
 @media (max-width: 845px) {
@@ -368,11 +397,11 @@ footer .name-logo {
     .top-destinations, .testimonials {
         gap: 1rem;
     }
-    footer {
+    /* footer {
         display: flex;
         flex-wrap: wrap;
-        /* flex-direction: column;
-        align-items: center; */
+        flex-direction: column;
+        align-items: center; 
     }
     .ft-links .ft-wrap {
         display: flex;
@@ -380,7 +409,7 @@ footer .name-logo {
     }
     .ft-links .ft-wrap h1 {
         display: block;
-    }
+    } */
 }
 @media (max-width: 800px) {
     .js-nav-load {

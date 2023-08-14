@@ -13,76 +13,57 @@ button {
     cursor: pointer;
     border: none;
     border-radius: 10px;
-    background-color: #000;
+    background-color: #f1a501;
     color: #fff;
     font-size: large;
     transition: transform 0.3s ease-in-out;
     padding: 0.3rem;
 }
 button:hover {
-    background-color: #2b2b2b;
+    background-color: #da9501;
 }
-.login-navigation-main {
-    height: 1.3rem;
-}
-.login-navigation {
+.parent-container {
     display: flex;
-    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
 }
-.login-navigation li {
-    list-style-type: none;
-    text-transform: capitalize;
-}
-.login-navigation li a {
-    text-decoration: none;
-    color: #000;
-}
-
-.login-navigation li a:hover{
-    border-bottom: 2px solid #fff;
-    color: #4d4b4b;
-}
-
 .login-heading {
     text-align: center;
     position: relative;
 }
 .login-heading h1 {
-    position: absolute;
-    top: 45px;
-    left: 40%;
-}
-.parent-container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    margin: 1rem;
 }
 .login-container {
     width: 23rem;
-    background-color: #fff;
+    background-color: #e2dcf7;
     opacity: 0.9;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
     border-radius: 15px;
-    box-shadow: 1px 1px 1px #0b0b0b;
+    padding: 1rem;
 }
-.login-form {
-    height: 28rem;
+.login-form { 
     display: flex;
     flex-direction: column;
     justify-content: center;
+
 }
 .login-form input {
     margin: 0.6rem;
+    padding: 0.5rem;
     height: 2rem;
     border: none;
-    border-bottom: 1px solid #000;
+    border-radius: 1rem;
+    border-bottom: 1px solid #f1a501;
     outline: none;
     font-size: large;
 }
 input:focus {
     height: 2.5rem;
-    border-bottom: 2px solid #0b0b0b;
+    border: 1.5px solid #f1a501;
 }
 .login-form label {
     color: #000;
@@ -94,18 +75,14 @@ input:focus {
     display: flex;
     justify-content: center;
 }
-.login-sign-up {
-    position: relative;
-
-}
 .login-sign-up p {
-    position: absolute;
-    bottom: 4rem;
-    
+    text-align: center;
+    margin: 1rem;
 }
 .login-sign-up p a {
     text-decoration: none;
 }
+
 @media (max-width: 450px) {
     .login-container {
         width: 15rem;
