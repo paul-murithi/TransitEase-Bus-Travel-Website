@@ -16,12 +16,12 @@ const travelTo = document.getElementById('travel-to');
 travelTo.innerHTML = `<span>To: </span><span class = "travel-grp">${whereTo}</span>`;
 
 const travelDate = document.getElementById('travel-date');
-travelDate.textContent = `${date}`;
+travelDate.innerHTML = `<span>Date: </span><span class = "travel-grp">${date}</span>`;
 
 //Display the VIP seats
 const vipSeats = document.querySelectorAll('.seat');
-for (i = 0; i < 12; i++){
-    vipSeats[i].classList.add('vip');
+for (i = 0; i < 12; i++) {
+  vipSeats[i].classList.add('vip');
 }
 //Event handlers for the seats
 const seats = document.querySelectorAll('.test-seat');
@@ -60,8 +60,8 @@ function handleProceed() {
 
 
 /*##########################################################*/
-function showCheckoutPage(seats){
-  if(seats != ""){
+function showCheckoutPage(seats) {
+  if (seats != "") {
     console.log("You have chose seat: " + seats);
     const url = `checkout.html?seatNumber=${encodeURIComponent(seats)}`;
     window.location.href = url;

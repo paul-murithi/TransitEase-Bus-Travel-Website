@@ -7,19 +7,23 @@
     --3rd: #14183E;
     --black: #080809;
 }
+
 main {
     width: 90%;
     margin: auto;
 }
+
 header {
     background-image: url(/images/Decore.png);
     background-repeat: no-repeat;
     background-position: right;
     background-size: cover;
 }
+
 .main {
     display: flex;
 }
+
 .banner-container {
     display: flex;
     flex-direction: column;
@@ -27,6 +31,7 @@ header {
     justify-content: center;
     padding: 2rem;
 }
+
 .banner-details {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #5E6282;
@@ -35,12 +40,14 @@ header {
     font-weight: 500;
     line-height: 1.875rem;
 }
+
 .banner-heading {
     color: #DF6951;
     font-size: 1.25rem;
     font-family: Poppins;
     font-weight: 700;
 }
+
 .banner-content h1 {
     color: var(--1st, #181E4B);
     font-size: 5.25rem;
@@ -75,19 +82,21 @@ main {
     height: 19.625rem;
     border-radius: 2.25rem;
     background: var(--white, #FFF);
-    box-shadow: 
-    0px 1.85px 3.15px 0px rgba(0, 0, 0, 0),
-    0px 8.15px 6.52px 0px rgba(0, 0, 0, 0.01),
-    0px 20px 13px 0px rgba(0, 0, 0, 0.01),
-    0px 38.52px 25.48px 0px rgba(0, 0, 0, 0.01),
-    0px 64.81px 46.85px 0px rgba(0, 0, 0, 0.02),
-    0px 100px 80px 0px rgba(0, 0, 0, 0.02);
+    box-shadow:
+        0px 1.85px 3.15px 0px rgba(0, 0, 0, 0),
+        0px 8.15px 6.52px 0px rgba(0, 0, 0, 0.01),
+        0px 20px 13px 0px rgba(0, 0, 0, 0.01),
+        0px 38.52px 25.48px 0px rgba(0, 0, 0, 0.01),
+        0px 64.81px 46.85px 0px rgba(0, 0, 0, 0.02),
+        0px 100px 80px 0px rgba(0, 0, 0, 0.02);
 }
+
 .services img {
     width: 5.75rem;
     height: 4.875rem;
     flex-shrink: 0;
 }
+
 .services h1 {
     color: var(--text-heading-color, #1E1D4C);
     text-align: center;
@@ -95,6 +104,7 @@ main {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 600;
 }
+
 .services p {
     color: var(--textclr, #5E6282);
     text-align: center;
@@ -102,21 +112,25 @@ main {
     font-weight: 500;
     line-height: 1.625rem;
 }
+
 .category-services-headers {
     text-align: center;
     margin: 4rem auto;
 }
+
 .category-services-headers p {
     color: var(--textclr, #5E6282);
     font-size: 1.125rem;
     font-weight: 600;
 }
+
 .category-services-headers h1 {
     color: var(--3rd, #14183E);
     font-size: 3.125rem;
     font-weight: 700;
     line-height: normal;
 }
+
 .category-services {
     display: flex;
     gap: 2rem;
@@ -129,6 +143,7 @@ main {
     background-repeat: no-repeat;
     background-position: right;
 }
+
 .destination {
     color: var(--textclr, #5E6282);
     font-size: 1.125rem;
@@ -138,18 +153,21 @@ main {
     box-shadow: 0px 1.8518518209457397px 3.1481480598449707px 0px rgba(0, 0, 0, 0.00), 0px 8.148148536682129px 6.518518447875977px 0px rgba(0, 0, 0, 0.01), 0px 20px 13px 0px rgba(0, 0, 0, 0.01), 0px 38.51852035522461px 25.481481552124023px 0px rgba(0, 0, 0, 0.01), 0px 64.81481170654297px 46.85185241699219px 0px rgba(0, 0, 0, 0.02), 0px 100px 80px 0px rgba(0, 0, 0, 0.02);
     margin-left: 2rem;
 }
-.destination-name{
+
+.destination-name {
     width: 70%;
     margin: 1rem auto;
     display: flex;
     justify-content: space-between;
 }
+
 .navigation {
     display: flex;
     width: 70%;
     margin: 1rem auto;
     justify-content: flex-start;
 }
+
 .navigation img {
     width: 1.25rem;
     height: 1.25rem;
@@ -161,10 +179,12 @@ main {
     display: flex;
     margin-top: 5rem;
 }
+
 .booking-info-item-1 {
     display: flex;
     flex-direction: column;
 }
+
 .booking-heading {
     color: var(--3rd, #14183E);
     font-size: 2.125rem;
@@ -175,31 +195,38 @@ main {
     text-transform: capitalize;
     margin-top: 0;
 }
+
 .booking-img img {
     width: 2.9375rem;
     height: 3rem;
     flex-shrink: 0;
     margin-right: 1.5rem;
 }
+
 .booking-par {
     color: var(--textclr, #5E6282);
     font-style: normal;
     font-weight: 600;
 }
+
 .booking-details {
     display: flex;
     padding: 1.5rem;
 }
-.booking-details-par h1,p {
+
+.booking-details-par h1,
+p {
     color: var(--textclr, #5E6282);
     font-size: 1rem;
     font-weight: 700;
     line-height: 124.5%;
 }
+
 .booking-details-par p {
     font-style: normal;
     font-weight: 400;
 }
+
 .booking-info-item-2 {
     /* width: 23.125rem;*/
     margin-top: 5rem;
@@ -218,6 +245,7 @@ main {
     line-height: 124.5%;
     letter-spacing: 0.01688rem;
 }
+
 .booking-info-icons img {
     width: 1rem;
     height: 1rem;
@@ -227,15 +255,18 @@ main {
     background-repeat: no-repeat;
     background-position: center;
 }
+
 .booking-info-icons {
     margin: 1rem 0;
 }
+
 /*new page*/
 .testimonials {
     display: flex;
     /* display: grid;
     grid-template-columns: 45rem 25rem; */
 }
+
 .testimonials-details {
     color: var(--3rd, #14183E);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -245,6 +276,7 @@ main {
     flex: 2 0 0;
     margin: 5rem 0;
 }
+
 .testimonials-content {
     border-radius: 0.625rem;
     background: var(--white, #FFF);
@@ -255,24 +287,29 @@ main {
     padding: 1rem;
     margin-right: 1rem;
 }
+
 .testimonials-content h2 {
     margin-top: 2rem;
     color: var(--1st, #181E4B);
 }
+
 .partners-heading {
     font-size: 2rem;
     color: #14183E;
     margin-top: 2.5rem;
     text-align: center;
 }
+
 .partners-logos {
     display: flex;
     justify-content: space-evenly;
 }
+
 .partners-logos img {
     width: 8.125rem;
     height: 8.125rem;
 }
+
 .ft-banner {
     background-color: #f9f6f6;
     border-radius: 1rem;
@@ -281,17 +318,21 @@ main {
     font-weight: bold;
     font-size: x-large;
 }
+
 .ft-banner .ft-details {
     text-align: center;
 }
+
 .ft-banner-heading {
-    color:var(--1st, #181E4B);
+    color: var(--1st, #181E4B);
     font-size: 3rem;
 }
+
 .ft-details p {
     color: #f5853d;
     font-size: 1.5rem;
 }
+
 .hr-line {
     border: 1px solid black;
     margin: 2rem 0;
@@ -300,51 +341,61 @@ main {
 ul {
     list-style-type: none;
 }
+
 img {
     max-width: 100%;
 }
+
 footer {
     display: flex;
     justify-content: space-evenly;
     margin-top: 1rem;
 }
-.links > * {
+
+.links>* {
     text-align: center;
     padding: 0.5rem;
 }
+
 .links img {
     height: 28px;
     width: 28px;
 }
+
 .company-logo {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.company-logo > * {
+
+.company-logo>* {
     text-align: center;
     margin: 0;
 }
+
 .author {
     text-align: center;
 }
 
-@media (max-width: 1040px){
+@media (max-width: 1040px) {
     footer {
         display: grid;
-        grid-template-columns: repeat(3,auto);
+        grid-template-columns: repeat(3, auto);
         grid-template-rows: repeat(2, auto);
     }
+
     .company-logo {
         grid-column: span 2;
     }
 }
-@media (max-width: 600px){
+
+@media (max-width: 600px) {
     footer {
         display: grid;
-        grid-template-columns: repeat(2,auto);
+        grid-template-columns: repeat(2, auto);
         grid-template-rows: repeat(3, auto);
     }
+
     .company-logo {
         grid-column: span 2;
     }
@@ -361,16 +412,19 @@ footer {
         display: flex;
         flex-direction: column;
     }
+
     .banner-img {
         display: none;
     }
 }
+
 @media (max-width: 700px) {
     .category-services {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+
     .banner-content h1 {
         color: var(--1st, #181E4B);
         font-size: 4.25rem;
@@ -380,6 +434,7 @@ footer {
         margin: 0;
     }
 }
+
 @media (max-width: 550px) {
     header {
         background-image: none;
@@ -389,14 +444,21 @@ footer {
 
 
 @media (max-width: 845px) {
-    .category-services, .top-destinations, .booking-info, .testimonials {
+
+    .category-services,
+    .top-destinations,
+    .booking-info,
+    .testimonials {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
-    .top-destinations, .testimonials {
+
+    .top-destinations,
+    .testimonials {
         gap: 1rem;
     }
+
     /* footer {
         display: flex;
         flex-wrap: wrap;
@@ -411,6 +473,7 @@ footer {
         display: block;
     } */
 }
+
 @media (max-width: 800px) {
     .js-nav-load {
         display: none;
