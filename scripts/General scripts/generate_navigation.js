@@ -1,25 +1,46 @@
-const header = document.querySelector('header');
+const navigationItems = [
+  {
+    site: "Home",
+    href: "/Pages/Homepage/index.html"
+  },
+  {
+    site: "Destinations",
+    href: "#"
+  },
+  {
+    site: "Flights",
+    href: "#"
+  },
+  {
+    site: "Book now",
+    href: "/Pages/Ticket_Booking_page/index.html"
+  },
+  {
+    site: "Log in",
+    href: "/Pages/login_page/index.html"
+  },
+  {
+    site: "Sign up",
+    href: "/Pages/Sign up/index.html"
+  },
+  {
+    site: "Products",
+    href: "#"
+  }
+];
 
-const navigationContainer = document.createElement('nav');
-const navigationImage = document.createElement('div');
-navigationImage.classList.add('nav-img');
-const navigationLinks = document.createElement('div');
-navigationLinks.classList.add('nav-links');
-const navigationUnorderedList = document.createElement('ul');
+function generateNavigationMenu() {
+  const navigationMenu = document.getElementById("navigation-menu");
 
-const loadContent = document.querySelector('.js-nav-load');
-loadContent.append(navigationContainer);
-navigationContainer.appendChild(navigationLinks);
-navigationLinks.appendChild(navigationUnorderedList);
+  const navData = navigationItems.map(link => `
+    <li><a href="${link.href}">${link.site}</a></li>
+  `).join("");
 
-const navigationItems = ["Home", "Destinations","Flights", "Book now","Log in", "Sign up", "Products"];
-const pageNames = ["/Pages/Homepage/index", "#", "#", "/Pages/Ticket_Booking_page/index", "/Pages/login_page/index", "/Pages/Sign up/index", "#"];
-
-for (let i = 0; i < navigationItems.length; i++) {
-  const listItem = document.createElement('li');
-  const anchor = document.createElement('a');
-  anchor.innerText = navigationItems[i];
-  anchor.href = pageNames[i] + ".html";
-  listItem.appendChild(anchor);
-  navigationUnorderedList.appendChild(listItem);
+  navigationMenu.innerHTML = `
+    <div class="nav-links">
+      <ul>${navData}</ul>
+    </div>
+  `;
 }
+
+generateNavigationMenu();

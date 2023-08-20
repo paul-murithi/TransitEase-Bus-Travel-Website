@@ -2,47 +2,50 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    height: 150rem;
+}
+
 button {
     cursor: pointer;
     border: none;
 }
+
 nav {
     display: flex;
-    padding-top: 0.7rem;
 }
+
 img {
-    width: 100%;
+    max-width: 100%;
 }
+
 a {
     text-decoration: none;
     color: var(--1st, #212832);
     font-size: 1.0625rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-a:hover:not(.bordered-link) {
+
+a:hover {
     color: #F1A501;
     border-bottom: 2px solid #F1A501;
 }
-.nav-img {
-    display: flex;
-    margin: 0 2rem;
-}
+
 .nav-links ul {
     display: flex;
     list-style: none;
     justify-content: space-evenly;
 }
+
 ul {
     list-style-type: none;
 }
+
 .nav-links {
     width: 100%;
-}
-.bordered-link {
-    border: 2px solid black;
-    padding: 0.2rem;
-}
-.bordered-link:hover {
-    color: #F1A501;
-    border: 2px solid #F1A501;
+    position: fixed;
+    background-color: #fff1da;
+    height: 2rem;
+    padding: 0.5rem 0;
 }

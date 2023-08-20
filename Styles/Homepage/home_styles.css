@@ -76,6 +76,10 @@ main {
     margin: auto;
 }
 
+.banner-img {
+    margin-top: 4rem;
+}
+
 
 .services {
     width: 16.6875rem;
