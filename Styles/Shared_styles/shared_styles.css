@@ -3,10 +3,6 @@
     padding: 0;
 }
 
-body {
-    height: 150rem;
-}
-
 button {
     cursor: pointer;
     border: none;

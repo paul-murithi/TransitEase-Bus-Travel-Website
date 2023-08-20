@@ -1,29 +1,43 @@
 .page-container {
     display: flex;
     height: 100vh;
-    position: relative;
-    margin-top: 0.5rem;
+    margin-top: 3rem;
 }
+
 .travel-banner {
-    background: #e2dcf7;
-    color: #000;
+    background: url(/images/hobi-industri-C-zgN_LEKb8-unsplash.jpg);
+    background-size: cover;
+    color: #fff;
     flex: 2 1 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    text-align: end;
+    /* display: flex;
+    flex-direction: column; */
+    /* justify-content: center; */
 }
+
+.travel-banner p {
+    font-size: 1.5rem;
+    color: #dad6d6;
+}
+
+.travel-banner>* {
+    margin-right: 0.5rem;
+}
+
 .travel-banner h1 {
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 .travel-info-input {
-   flex: 1 1 0;
+    flex: 1 1 0;
 }
+
 .page-fx {
     display: flex;
     flex-direction: column;
     padding: 1rem;
 }
+
 .travel-info {
     position: absolute;
     display: flex;
@@ -31,12 +45,18 @@
     justify-content: space-evenly;
     background-color: #f1a501;
     border-radius: 1rem;
-    top: 50%;
+    top: 60%;
     left: 60%;
     transform: translate(-50%, -50%);
     height: 20rem;
     width: 45rem;
 }
+
+.travel-info-input {
+    background: url(/images/kevin-clyde-berbano-r4V8xg21vek-unsplash.jpg);
+    background-size: cover;
+}
+
 .travel-inpt input {
     margin-top: 0.5rem;
     border: none;
@@ -45,10 +65,12 @@
     outline: none;
     font-size: 1rem;
 }
+
 .page-fx-2 {
     display: flex;
     justify-content: space-evenly;
 }
+
 .page-fx-2 button {
     background-color: #f5a522;
     color: #fff;
@@ -56,37 +78,97 @@
     padding: 0.3rem;
     border-radius: 0.5rem;
 }
+
 .checkout-routes-btn button {
     background-color: #ff6260;
     color: #fff;
     padding: 0.8rem;
 }
-@media (max-width: 900px) {
-    .page-container {
-        display: flex;
-        flex-direction: column;
-    }
+
+@media (max-width: 918px) {
     .travel-info {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 20rem;
-        height: 20rem;
+        width: 38rem;
     }
-    .travel-banner {
-        flex: 1 0 0;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+}
+
+@media (max-width: 790px) {
+    .travel-info {
+        width: 30rem;
     }
-    .travel-info-input {
-        flex: 1 0 0;
-    }
-    .nav-links ul li {
-        display: none;
-    }
-    .nav-img {
-        margin-bottom: 10px;
+}
+
+@media (max-width: 620px) {
+    .travel-info {
+        width: 25rem;
     }
 
+    nav {
+        position: absolute;
+        left: -100%;
+    }
+}
+
+@media (max-width: 516px) {
+    .travel-info {
+        width: 20rem;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        background: url(/images/hobi-industri-C-zgN_LEKb8-unsplash.jpg);
+        background-size: cover;
+    }
+
+    .travel-banner {
+        background: none;
+        text-align: center;
+    }
+
+    .page-container {
+        flex-direction: column;
+    }
+
+    .travel-info-input {
+        display: none;
+    }
+
+    .travel-info {
+        position: absolute;
+        background-color: #f1a501;
+        border-radius: 1rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 30rem;
+    }
+
+    .travel-info form {
+        display: flex;
+        flex-direction: column;
+        height: 25rem;
+    }
+
+    .travel-dates {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+        margin: 1rem 1rem;
+    }
+
+    .travel-dates>* {
+        margin: 0.5rem 0;
+        height: 2.2rem;
+        font-size: 1.1rem;
+    }
+
+    .travel-inpt input {
+        height: 2.2rem;
+    }
+
+    .checkout-routes-btn button {
+        height: 3rem;
+        font-size: 1.3rem;
+    }
 }
