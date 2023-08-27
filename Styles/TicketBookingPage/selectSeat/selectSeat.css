@@ -3,14 +3,16 @@
     padding: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
 .travelling-info-banner {
     background-color: #ff6260;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: #fff;
-    margin-top: 0.5rem;
+    margin-top: 3rem;
 }
+
 .destinations {
     display: flex;
     align-items: center;
@@ -20,10 +22,12 @@
     font-style: normal;
     font-weight: 500;
 }
+
 .travel-grp {
     color: #504530;
     margin: 0;
 }
+
 #travel-date {
     color: #EEE;
     font-family: Ubuntu;
@@ -32,7 +36,9 @@
     font-weight: 400;
     line-height: normal;
 }
-.destinations p, img {
+
+.destinations p,
+img {
     padding: 0 3rem;
 }
 
@@ -47,12 +53,15 @@
     border-radius: 1rem;
     margin: 1rem;
 }
-.travel-info > * {
+
+.travel-info>* {
     padding: 0.5rem;
 }
+
 .travel-info h1 {
     color: #212832;
 }
+
 .travel-info p {
     color: gray;
     font-weight: bold;
@@ -64,11 +73,14 @@
     display: flex;
     justify-content: center;
 }
-table th,.show-booking-information {
+
+table th,
+.show-booking-information {
     background-color: #ebe5e5;
     color: #000;
     padding: 8px;
 }
+
 /* .display-seats-container {
     display: none;
 } */
@@ -78,14 +90,17 @@ table th,.show-booking-information {
     background-color: #fff;
     margin: 3rem 0;
 }
+
 .show-booking-information {
     border: 2px solid black;
     padding: 1rem 8rem 1rem 1rem;
 }
+
 .show-booking-information p {
     color: #000;
     margin-top: 1rem;
 }
+
 .display-seats-container .seat-row-item table td:not(.no-border, .driver-seat) {
     height: 50px;
     background-color: #c2c1c4;
@@ -95,48 +110,63 @@ table th,.show-booking-information {
     cursor: pointer;
     text-align: center;
 }
-td,.booked,.vip {
+
+td,
+.booked,
+.vip {
     border-radius: 1rem;
 }
-.key-map{
+
+.key-map {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .vip {
     background-color: #ef9a9a;
     height: 50px;
     color: #fff;
 }
+
 .key-map div {
     border-radius: 1rem;
 }
+
 .booked {
     background-color: #f5a522;
     height: 50px;
 }
+
 .select-seat-key div {
     margin-top: 0.5rem;
 }
+
 .keys {
     height: 50px;
     width: 50px;
 }
+
 .vip-key {
     background-color: #ef9a9a;
 }
+
 .available-key {
     background-color: #c2c1c4;
 }
+
 .selected-seat-key {
     background-color: #ff0000;
 }
+
 .booked-key {
     background-color: #f5a522;
 }
+
 .check-out-btn-item {
     width: 170%;
 }
+
 .check-out-btn-item button {
     margin-top: 3rem;
     transition: 350ms;
@@ -146,15 +176,18 @@ td,.booked,.vip {
     background-color: #000;
     color: #FFF;
 }
+
 .check-out-btn-item button:hover {
     background-color: hsl(0, 0%, 10%);
     color: #FFF;
     box-shadow: 0.5px 0.5px 1px 1px #000000;
 }
+
 .no-border {
     background-color: #f6f4f0;
     border-radius: 0;
 }
+
 /* .driver-seat {
     background-color: #000;
     color: #fff;
