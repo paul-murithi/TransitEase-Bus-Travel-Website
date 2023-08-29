@@ -45,3 +45,86 @@ ul {
     height: 2rem;
     padding: 0.5rem 0;
 }
+
+.ft-banner {
+    background-color: #f9f6f6;
+    border-radius: 1rem;
+    /* #f7f6f6 */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.ft-banner .ft-details {
+    text-align: center;
+}
+
+.ft-banner-heading {
+    color: var(--1st, #181E4B);
+    font-size: 3rem;
+}
+
+.ft-details p {
+    color: #f5853d;
+    font-size: 1.5rem;
+}
+
+.hr-line {
+    border: 1px solid black;
+    margin: 2rem 0;
+}
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+}
+
+.links>* {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.links img {
+    height: 28px;
+    width: 28px;
+}
+
+.company-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.company-logo>* {
+    text-align: center;
+    margin: 0;
+}
+
+.author {
+    text-align: center;
+}
+
+@media (max-width: 1040px) {
+    footer {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(2, auto);
+    }
+
+    .company-logo {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 600px) {
+    footer {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(3, auto);
+    }
+
+    .company-logo {
+        grid-column: span 2;
+    }
+}
