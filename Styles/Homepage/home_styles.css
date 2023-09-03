@@ -17,7 +17,6 @@ header {
     background-image: url(/images/Decore.png);
     background-repeat: no-repeat;
     background-position: right;
-    background-size: cover;
 }
 
 .main {
@@ -340,6 +339,16 @@ p {
 .hr-line {
     border: 1px solid black;
     margin: 2rem 0;
+}
+
+@media (max-width: 995px) {
+    .banner-img {
+        margin-top: 4rem;
+    }
+
+    .banner-container {
+        margin-top: 3rem;
+    }
 }
 
 

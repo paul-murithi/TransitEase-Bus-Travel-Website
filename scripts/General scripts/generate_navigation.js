@@ -8,10 +8,6 @@ const navigationItems = [
     href: "#"
   },
   {
-    site: "Flights",
-    href: "#"
-  },
-  {
     site: "Book now",
     href: "/Pages/Ticket_Booking_page/index.html"
   },
@@ -22,12 +18,12 @@ const navigationItems = [
   {
     site: "Sign up",
     href: "/Pages/Sign up/index.html"
-  },
-  {
-    site: "Products",
-    href: "#"
   }
 ];
+const pageBanner = {
+  img: '/images/7c829fba9e354e7d96fe6a44cd79f823.png',
+  alt: 'Banner logo'
+}
 
 function generateNavigationMenu() {
   const navigationMenu = document.getElementById("navigation-menu");
@@ -36,11 +32,31 @@ function generateNavigationMenu() {
     <li><a href="${link.href}">${link.site}</a></li>
   `).join("");
 
-  navigationMenu.innerHTML = `
+  navigationMenu.innerHTML += `
     <div class="nav-links">
-      <ul>${navData}</ul>
+      <img src = "${pageBanner.img}" alt = "${pageBanner.alt}">
+      <ul class = "nav-data" data-visible = "false">${navData}</ul>
+      <button class = "toggle-nav-bar">
+        <img src = "/icons/bars-solid.svg" alt = "toggle nav bar">
+      </button>
     </div>
   `;
 }
 
 generateNavigationMenu();
+
+// Toggle the mobile responsive buttons
+const primaryNavigation = document.querySelector('.nav-data');
+const toggleButton = document.querySelector('.toggle-nav-bar');
+toggleButton.addEventListener('click', handleMobileNavbar);
+
+function handleMobileNavbar() {
+  const navDataAttribute = primaryNavigation.getAttribute("data-visible");
+  if (navDataAttribute === "false") {
+    primaryNavigation.setAttribute("data-visible", true);
+  }
+  else if (navDataAttribute === "true") {
+    primaryNavigation.setAttribute("data-visible", false);
+  }
+
+}

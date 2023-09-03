@@ -2,34 +2,22 @@
     display: flex;
     height: 100vh;
     margin-top: 3rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .travel-banner {
-    background: url(/images/hobi-industri-C-zgN_LEKb8-unsplash.jpg);
-    background-size: cover;
+    text-align: center;
+}
+
+.travel-banner h1 {
     color: #fff;
-    flex: 2 1 0;
-    text-align: end;
-    /* display: flex;
-    flex-direction: column; */
-    /* justify-content: center; */
+    font-size: 4rem;
 }
 
 .travel-banner p {
     font-size: 1.5rem;
-    color: #dad6d6;
-}
-
-.travel-banner>* {
-    margin-right: 0.5rem;
-}
-
-.travel-banner h1 {
-    font-size: 4rem;
-}
-
-.travel-info-input {
-    flex: 1 1 0;
+    color: #dcdbdb;
 }
 
 .page-fx {
@@ -39,21 +27,14 @@
 }
 
 .travel-info {
-    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     background-color: #f1a501;
     border-radius: 1rem;
-    top: 60%;
-    left: 60%;
-    transform: translate(-50%, -50%);
     height: 20rem;
     width: 45rem;
-}
-
-.travel-info-input {
-    background-size: cover;
+    padding: 0.5rem;
 }
 
 .travel-inpt input {
@@ -100,11 +81,6 @@
     .travel-info {
         width: 25rem;
     }
-
-    nav {
-        position: absolute;
-        left: -100%;
-    }
 }
 
 @media (max-width: 516px) {
@@ -114,11 +90,6 @@
 }
 
 @media (max-width: 500px) {
-    body {
-        background: url(/images/hobi-industri-C-zgN_LEKb8-unsplash.jpg);
-        background-size: cover;
-    }
-
     .travel-banner {
         background: none;
         text-align: center;
@@ -133,19 +104,14 @@
     }
 
     .travel-info {
-        position: absolute;
         background-color: #f1a501;
         border-radius: 1rem;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: 30rem;
+        height: 100%;
     }
 
     .travel-info form {
         display: flex;
         flex-direction: column;
-        height: 25rem;
     }
 
     .travel-dates {

@@ -16,7 +16,7 @@ const travelTo = document.getElementById('travel-to');
 travelTo.innerHTML = `<span>To: </span><span class = "travel-grp">${whereTo}</span>`;
 
 const travelDate = document.getElementById('travel-date');
-travelDate.innerHTML = `<span>Date: </span><span class = "travel-grp">${date}</span>`;
+travelDate.innerHTML = `<strong>Date: </strong><strong class = "travel-grp">${date}</strong>`;
 
 //Display the VIP seats
 const vipSeats = document.querySelectorAll('.seat');
