@@ -23,9 +23,20 @@
                 </div>
                 <form action="#">
                     <div class="travel-inpt page-fx">
-                        <input type="text" name="#" id="inpt-frm" placeholder="Travelling from">
-                        <input type="text" name="#" id="inpt-to" placeholder="Travelling to">
+                        <p style="color: red;" id="error-container"></p>
+                        <input type="text" name="#" id="inpt-frm" placeholder="Travelling from"
+                            class="destination-input">
+                        <div class="suggestion-box">
+                            <ul class="suggestions-container" id="js-suggestions-container-from"></ul>
+                        </div>
+
+                        <input type="text" name="#" id="inpt-to" placeholder="Travelling to" class="destination-input">
+                        <div class="suggestion-box">
+                            <ul class="suggestions-container" id="js-suggestions-container-to"></ul>
+                        </div>
                     </div>
+
+
                     <div class="travel-dates page-fx-2">
                         <button type="button" class="addDate">Today</button>
                         <button type="button" class="addDate">Tomorrow</button>
@@ -33,7 +44,6 @@
                     </div>
                     <div class="checkout-routes-btn page-fx">
                         <button type="button" id="bkn-page-search-btn">Find Buses</button>
-                        <!-- <a href="selectSeats.html" style="color: black;">Find buses</a> -->
                     </div>
                 </form>
             </div>

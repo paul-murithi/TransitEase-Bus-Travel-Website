@@ -8,7 +8,7 @@ const travellingDate = document.getElementById('inpt-date');
 //Get next button
 const selectSeatsButton = document.getElementById('bkn-page-search-btn');
 selectSeatsButton.addEventListener('click', navigateToSelectSeat);
-
+// Function to navigate the user to seat selection page.
 function navigateToSelectSeat() {
 
     inpt_to = document.getElementById('inpt-to').value;
@@ -16,7 +16,7 @@ function navigateToSelectSeat() {
     inpt_date = document.getElementById('inpt-date').value;
 
     //validate all inputs are filled    
-    if (inpt_to && inpt_from && inpt_date){
+    if (inpt_to && inpt_from && inpt_date) {
         // Construct the URL with parameters
         const url = `selectSeats.html?to=${encodeURIComponent(inpt_to)}&from=${encodeURIComponent(inpt_from)}&date=${encodeURIComponent(inpt_date)}`;
         // Navigate to the selectSeat.html page
@@ -37,26 +37,25 @@ addDateBtn.forEach((value, event) => {
         addDate(event);
     });
 });
-
+// Function to allow the user to pick most common date. (today or tomorrow)
 function addDate(event) {
-    
-    if(event === 0) {
-        // Get the current date
+    // Get the current date
+    if (event === 0) {
         const currentDate = new Date();
         // Format the date as YYYY-MM-DD (required by the date input)
         const formattedDate = currentDate.toISOString().split('T')[0];
         // Set the value of the date input to today's date
         travellingDate.value = formattedDate;
     }
-    else if(event === 1) {
+    // Get the following day's date
+    else if (event === 1) {
         const currentDate = new Date();
-        // Add one day to the current date
         const tomorrowDate = new Date(currentDate);
         tomorrowDate.setDate(currentDate.getDate() + 1);
-    
+
         // Format the date as YYYY-MM-DD (required by the date input)
         const formattedDate = tomorrowDate.toISOString().split('T')[0];
-    
+
         // Set the value of the date input to tomorrow's date
         travellingDate.value = formattedDate;
     }
@@ -79,3 +78,92 @@ const formattedDate = `${getDayName(currentDate)}, ${currentDate.toLocaleDateStr
 // Display the formatted date on the webpage
 dateDisplay.textContent = formattedDate;
 */
+
+// Array of predefined destinations. To be fetched from the server in later updates
+const destinations = [
+    "Meru",
+    "Nairobi",
+    "Mombasa",
+    "Nakuru",
+    "Kisumu",
+    "Naivasha",
+    "Isiolo",
+    "Narok",
+    "Machakos",
+    "Eldoret",
+    "Voi",
+    "Malindi",
+    "Siaya",
+    "Kakamega"
+];
+
+const inputFieldTo = document.getElementById("inpt-to");
+const suggestionsContainerTo = document.getElementById("js-suggestions-container-to");
+const inputFieldFrom = document.getElementById("inpt-frm");
+const suggestionsContainerFrom = document.getElementById("js-suggestions-container-from");
+const errorContainer = document.getElementById("error-container");
+
+// Function to clear suggestions container
+function clearSuggestionsContainer(container) {
+    container.innerHTML = '';
+}
+
+// Function to clear error message
+function clearError() {
+    errorContainer.textContent = '';
+}
+
+// Function to handle suggestion click
+function handleSuggestionClick(inputField, container, town) {
+    inputField.value = town;
+    clearSuggestionsContainer(container);
+    clearError();
+}
+
+// Function to handle no matching suggestions found
+function handleNoMatchingSuggestions() {
+    errorContainer.textContent = 'No matching destinations found';
+}
+
+// Function to update suggestions based on user input for a given input field and container
+function updateSuggestions(inputField, container) {
+    clearError();
+
+    const userInput = inputField.value.toLowerCase();
+    const matchingDestinations = destinations.filter((destination) =>
+        destination.toLowerCase().includes(userInput)
+    );
+
+    clearSuggestionsContainer(container);
+
+    if (matchingDestinations.length === 0) {
+        handleNoMatchingSuggestions();
+        return;
+    }
+
+    matchingDestinations.forEach((town) => {
+        const elementNames = document.createElement('li');
+        elementNames.classList.add('suggestion-list');
+        elementNames.textContent = town;
+
+        elementNames.addEventListener('click', () => {
+            handleSuggestionClick(inputField, container, town);
+        });
+
+        container.appendChild(elementNames);
+    });
+
+    if (userInput === '') {
+        container.classList.remove('suggestions-container-active');
+    } else {
+        container.classList.add('suggestions-container-active');
+    }
+}
+
+inputFieldTo.addEventListener("input", () => {
+    updateSuggestions(inputFieldTo, suggestionsContainerTo);
+});
+
+inputFieldFrom.addEventListener("input", () => {
+    updateSuggestions(inputFieldFrom, suggestionsContainerFrom);
+});

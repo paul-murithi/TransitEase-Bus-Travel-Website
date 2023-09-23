@@ -46,6 +46,33 @@
     font-size: 1rem;
 }
 
+.suggestions-container {
+    background-color: aliceblue;
+    /* padding: 0.5rem; */
+    width: 40%;
+    display: none;
+}
+
+ul .suggestion-list {
+    list-style: none;
+    padding: 0.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+ul .suggestion-list:hover {
+    background-color: hsl(1, 100%, 75%);
+    border-radius: 1rem;
+}
+
+.suggestions-container-active {
+    display: block;
+    position: absolute;
+    z-index: 9999;
+    border-radius: 1rem;
+    margin-top: 0.2rem;
+}
+
 .page-fx-2 {
     display: flex;
     justify-content: space-evenly;
