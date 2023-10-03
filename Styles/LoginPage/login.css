@@ -8,7 +8,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
-button {
+button:nth-child(1) {
     width: 40%;
     cursor: pointer;
     border: none;
@@ -19,7 +19,7 @@ button {
     transition: transform 0.3s ease-in-out;
     padding: 0.3rem;
 }
-button:hover {
+button:nth-child(1):hover {
     background-color: #da9501;
 }
 .parent-container {
@@ -30,20 +30,21 @@ button:hover {
 }
 .login-heading {
     text-align: center;
-    position: relative;
 }
 .login-heading h1 {
     text-align: center;
     margin: 1rem;
 }
 .login-container {
-    width: 23rem;
+    width: 85%;
     background-color: #e2dcf7;
-    opacity: 0.9;
     display: flex;
     flex-direction: column;
     border-radius: 15px;
     padding: 1rem;
+}
+.login-opacity-true {
+    opacity: 0.9;
 }
 .login-form { 
     display: flex;
@@ -83,9 +84,10 @@ input:focus {
     text-decoration: none;
 }
 
-@media (max-width: 450px) {
+@media (min-width: 750px){
     .login-container {
-        width: 15rem;
+        height: 60%;
+        justify-content: space-evenly;
     }
 }
 @media (max-width: 700px) {
@@ -93,8 +95,21 @@ input:focus {
         display: none;
     }
 }
-@media (min-width: 725px) {
+
+@media (max-width: 385px){
     .login-container {
-        width: 60%;
+        padding: 0.5rem;
+    }
+    body {
+        height: 100vh;
+    }
+    .login-container {
+        margin-top: 2rem;
+    }
+}
+@media (max-width: 310px){
+    .nav-links>img {
+        position: absolute;
+        left: 0.5rem;
     }
 }

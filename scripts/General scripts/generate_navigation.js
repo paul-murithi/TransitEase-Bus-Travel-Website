@@ -52,11 +52,22 @@ toggleButton.addEventListener('click', handleMobileNavbar);
 
 function handleMobileNavbar() {
   const navDataAttribute = primaryNavigation.getAttribute("data-visible");
+  const logPage = document.querySelector(".login-container");
   if (navDataAttribute === "false") {
     primaryNavigation.setAttribute("data-visible", true);
+    try {
+      logPage.classList.remove('login-opacity-true');
+    } catch (error) {
+      return;
+    }
   }
   else if (navDataAttribute === "true") {
     primaryNavigation.setAttribute("data-visible", false);
+    try {
+      logPage.classList.add('login-opacity-true');
+    } catch (error) {
+      return;
+    }
   }
 
 }

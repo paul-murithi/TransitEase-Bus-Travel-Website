@@ -8,7 +8,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 button {
@@ -33,12 +33,14 @@ form input:focus {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    /* height: 28rem; */
+    justify-content: space-evenly;
+    /* height: 80%; */
+    padding: 1rem;
     width: 30rem;
     background-color: #fff;
     margin: auto;
-    margin-top: 3.5rem;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
     border-radius: 2rem;
 }
 
@@ -79,16 +81,9 @@ form input:focus {
     background-color: #c6c6c6;
 }
 
-@media (max-width: 750px) {
-    .hide-navigation {
-        display: none;
-    }
-}
-
 @media (min-width: 1000px) {
     .signup-container {
         width: 60%;
-        height: auto;
     }
 
     .signup-container form {
@@ -102,13 +97,15 @@ form input:focus {
 
 @media (min-width: 1500px) {
     .signup-container {
-        height: 90%;
+        height: 75%;
+        margin-top: 5rem;
     }
 }
 
 @media (max-width: 540px) {
     .signup-container {
         max-width: 20rem;
-        height: 80%;
+        height: 70%;
+        margin-top: 8rem;
     }
 }
