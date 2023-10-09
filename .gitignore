@@ -1,5 +1,2 @@
-.classpath
-.project
-.build.xml
-/settings
-/.metadata/
+.metadata
+/Servers

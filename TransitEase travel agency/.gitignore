@@ -1,6 +1,3 @@
-# Eclipse-specific files and folders
-.settings/
+.settings
 .classpath
 .project
-.buildpath
-/build/
