@@ -96,7 +96,7 @@ legend {
     justify-content: center;
 }
 
-.checkout-button button {
+.checkout-button button, .modal button {
     padding: 1rem;
     border-radius: 10px;
     background: #F1A501;
@@ -106,6 +106,25 @@ legend {
     margin: 0.5rem;
     font-size: 0.82rem;
 }
+.dialog-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.modal {
+  max-width: 50%;
+  border: 1px solid brown;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  padding: 1rem;
+}
+.blur-active {
+  filter: blur(0.2rem);
+}
+
+
 
 @media (max-width: 700px) {
     .main-grid-wrap {
