@@ -25,9 +25,11 @@ a {
 
 a:hover {
     color: #F1A501;
+}
+.nav-data li .active {
+	color: #F1A501;
     border-bottom: 2px solid #F1A501;
 }
-
 .toggle-nav-bar {
     position: absolute;
     top: 0.5rem;
