@@ -34,8 +34,10 @@
             <form action="#" class="customer-details">
               <label for="name">Name</label>
               <input type="text" id="name" />
-              <label for="mobile-number">Mobile number:</label>
-              <input type="tel" id="mobile-number" />
+              <label for="mpesa-number"
+                >Mobile number <strong>(M-pesa)</strong></label
+              >
+              <input type="tel" id="mpesa-number" />
               <p id="errorMessages" style="color: red"></p>
             </form>
           </fieldset>
@@ -58,8 +60,9 @@
                 name="payment-option"
                 value="Bank card"
                 id="bank-card"
+                disabled
               />
-              <label for="bank-card">Bank card</label>
+              <label for="bank-card">Bank card (Not currently available)</label>
             </form>
             <div class="payment-guide">
               <ol>
@@ -101,10 +104,14 @@
             your phone with the ticket details. Additionally, you can close this
             modal to download your ticket.
           </p>
-          <button type="button" class="close-modal download-ticket">
-            Exit and download ticket
-          </button>
-          <button class="close-modal redirect-home">Go back to homepage</button>
+          <form>
+            <button type="button" class="close-modal download-ticket">
+              Exit and download ticket
+            </button>
+            <button class="close-modal redirect-home">
+              Go back to homepage
+            </button>
+          </form>
         </dialog>
       </div>
     </main>

@@ -1,5 +1,5 @@
 //Get the input elemments
-const phoneNumberInput = document.getElementById("mobile-number");
+const phoneNumberInput = document.getElementById("mpesa-number");
 const nameInput = document.getElementById("name");
 
 // Get the error output
@@ -11,7 +11,7 @@ checkOutButton.addEventListener("click", validateForm);
 
 function validateForm() {
   errorMessageContainer.innerHTML = "";
-
+  // Check if all inputs are filled
   if (nameInput.value === "" && phoneNumberInput.value === "") {
     errorMessageContainer.innerHTML = "Name and Phone Number are required.";
     return;
@@ -27,13 +27,14 @@ function validateForm() {
     return;
   }
 
+  // Check if the mobile number format is correct
   const phoneNumberPattern = /^\d{10}$/;
   if (!phoneNumberPattern.test(phoneNumberInput.value)) {
     errorMessageContainer.innerHTML =
       "Phone Number should contain exactly 10 digits.";
     return;
   }
-
+  // If validateForm is true, open the modal
   openModal();
 }
 
