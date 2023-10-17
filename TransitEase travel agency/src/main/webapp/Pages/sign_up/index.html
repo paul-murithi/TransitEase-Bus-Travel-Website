@@ -1,33 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign up</title>
-    <link rel="stylesheet" href="/TransitEase_travel_agency/Styles/SignupPage/signup.css">
-    <link rel="stylesheet" href="/TransitEase_travel_agency/Styles/Shared_styles/shared_styles.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="/TransitEase_travel_agency/Styles/SignupPage/signup.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/TransitEase_travel_agency/Styles/Shared_styles/shared_styles.css"
+    />
+  </head>
 
-<body>
-
+  <body>
     <nav id="navigation-menu"></nav>
 
     <main class="signup-container">
-        
-        <form action="#" method="#">
-            <h1 class="signup-heading-heading">Create an account</h1>
-            <input type="text" placeholder="Name">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password" id="password" name="password">
-            <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm password">
+      <form
+        method="post"
+        action="/TransitEase_travel_agency/Signup"
+        id="registrationForm"
+      >
+        <h1 class="signup-heading-heading">Create an account</h1>
+        <input
+          type="text"
+          placeholder="Name"
+          name="userName"
+          id="userName"
+          required
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          name="email"
+          id="email"
+          required
+        />
 
-            <button type="submit" title="create account" class="submit-btns-1">Create account</button>
-            <button type="submit" title="continue with google" class="submit-btns-2">Sign up with Google</button>
-        </form>
-        <p class="signup-heading-par">Already have a account? <a href="/TransitEase_travel_agency/Pages/login_page/index.html">Log in</a></p>
+        <input
+          type="password"
+          placeholder="Password"
+          id="password"
+          name="password"
+          required
+        />
+        <input
+          type="password"
+          id="confirm-password"
+          placeholder="Confirm password"
+          name="rePass"
+          required
+        />
+        <div class="error-container">
+          <p class="error-display"></p>
+        </div>
+
+        <button
+          type="submit"
+          title="create account"
+          class="submit-btns-1"
+          id="js-sign-up"
+        >
+          Create account
+        </button>
+        <button
+          type="submit"
+          title="continue with google"
+          class="submit-btns-2"
+        >
+          Sign up with Google
+        </button>
+      </form>
+      <p class="signup-heading-par">
+        Already have a account?
+        <a href="/TransitEase_travel_agency/Pages/login_page/index.jsp"
+          >Log in</a
+        >
+      </p>
     </main>
-    <script src="/TransitEase_travel_agency/scripts/General scripts/generate_navigation.js"></script>
-</body>
 
+    <script src="/TransitEase_travel_agency/scripts/General scripts/generate_navigation.js"></script>
+    <script src="/TransitEase_travel_agency/scripts/signUpPage/signUp.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const errorDisplay = document.querySelector(".error-display");
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get("failed");
+
+        if (error) {
+          errorDisplay.innerText =
+            "There was an error registering you, please try again later";
+        }
+      });
+    </script>
+  </body>
 </html>

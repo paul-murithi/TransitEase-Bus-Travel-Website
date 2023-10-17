@@ -1,111 +1,112 @@
 * {
-    margin: 0;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 body {
-    background-image: url(/TransitEase_travel_agency/Assets/images/tops-3720049_1920.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    /* height: 100vh; */
+  background-image: url(/TransitEase_travel_agency/Assets/images/tops-3720049_1920.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* height: 100vh; */
 }
 
 button {
-    cursor: pointer;
-    font-size: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
 form input {
-    margin-top: 3rem;
-    width: 15rem;
-    border: none;
-    border-bottom: 1.5px solid #808080;
-    outline: none;
-    font-size: large;
+  margin-top: 3rem;
+  width: 15rem;
+  border: none;
+  border-bottom: 1.5px solid #808080;
+  outline: none;
+  font-size: large;
 }
 
 form input:focus {
-    border-bottom: 2px solid #000;
+  border-bottom: 2px solid #000;
 }
 
 .signup-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    /* height: 80%; */
-    padding: 1rem;
-    width: 30rem;
-    background-color: #fff;
-    margin: auto;
-    margin-top: 4rem;
-    margin-bottom: 3rem;
-    border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  /* height: 80%; */
+  padding: 1rem;
+  width: 30rem;
+  background-color: #fff;
+  margin: auto;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+  border-radius: 2rem;
 }
 
 .signup-container .signup-heading-par {
-    color: #808080;
-    margin: 1rem;
+  color: #808080;
+  margin: 1rem;
 }
 
 .signup-container form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .signup-container .submit-btns-1 {
-    background-color: #f1a501;
-    color: #fff;
-    margin-top: 3rem;
-    border: none;
-    height: 2rem;
-    border-radius: 20px;
+  background-color: #f1a501;
+  color: #fff;
+  margin-top: 3rem;
+  border: none;
+  height: 2rem;
+  border-radius: 20px;
 }
 
 .signup-container .submit-btns-1:hover {
-    background-color: #d49714;
+  background-color: #d49714;
 }
 
 .signup-container .submit-btns-2 {
-    color: #000;
-    margin-top: 2rem;
-    border: 2px solid #000;
-    height: 2rem;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bolder;
+  color: #000;
+  margin-top: 2rem;
+  border: 2px solid #000;
+  height: 2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bolder;
 }
 
 .signup-container .submit-btns-2:hover {
-    background-color: #c6c6c6;
+  background-color: #c6c6c6;
 }
 
+
 @media (min-width: 1000px) {
-    .signup-container {
-        width: 60%;
-    }
+  .signup-container {
+    width: 60%;
+  }
 
-    .signup-container form {
-        width: 70%;
-    }
+  .signup-container form {
+    width: 70%;
+  }
 
-    form input {
-        width: 80%;
-    }
+  form input {
+    width: 80%;
+  }
 }
 
 @media (min-width: 1500px) {
-    .signup-container {
-        height: 75%;
-        margin-top: 5rem;
-    }
+  .signup-container {
+    height: 75%;
+    margin-top: 5rem;
+  }
 }
 
 @media (max-width: 540px) {
-    .signup-container {
-        max-width: 20rem;
-        height: 70%;
-        margin-top: 8rem;
-    }
+  .signup-container {
+    max-width: 20rem;
+    height: 70%;
+    margin-top: 8rem;
+  }
 }

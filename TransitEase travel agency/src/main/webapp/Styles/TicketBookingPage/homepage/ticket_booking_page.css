@@ -1,3 +1,8 @@
+body {
+	background-image: url('/TransitEase_travel_agency/Assets/images/Decore.png');
+	background-repeat: no-repeat;
+	background-position: right;
+}
 .page-container {
     display: flex;
     height: 100vh;

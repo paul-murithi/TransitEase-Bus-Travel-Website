@@ -14,7 +14,7 @@ const navigationItems = [
   },
   {
     site: "Log in",
-    href: "/TransitEase_travel_agency/Pages/login_page/index.html",
+    href: "/TransitEase_travel_agency/Pages/login_page/index.jsp",
   },
   {
     site: "Sign up",

@@ -1,203 +1,233 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 button {
-    cursor: pointer;
-    border: none;
+  cursor: pointer;
+  border: none;
 }
 
 nav {
-    display: flex;
+  display: flex;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 a {
-    text-decoration: none;
-    color: var(--1st, #212832);
-    font-size: 1.0625rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-decoration: none;
+  color: var(--1st, #212832);
+  font-size: 1.0625rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 a:hover {
-    color: #F1A501;
+  color: #f1a501;
 }
 .nav-data li .active {
-	color: #F1A501;
-    border-bottom: 2px solid #F1A501;
+  color: #f1a501;
+  border-bottom: 2px solid #f1a501;
 }
 .toggle-nav-bar {
-    position: absolute;
-    top: 0.5rem;
-    right: 2rem;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 31px;
-    height: 21px;
-    background-color: w;
+  position: absolute;
+  top: 0.5rem;
+  right: 2rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 31px;
+  height: 21px;
+  background-color: w;
 }
 
 .toggle-nav-bar .bar {
-    height: 3px;
-    width: 100%;
-    border-radius: 10px;
-    background-color: var(--1st, #181E4B);
+  height: 3px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: var(--1st, #181e4b);
 }
 
 .nav-links {
-    display: flex;
-    list-style: none;
-    justify-content: space-around;
-    width: 100%;
-    position: fixed;
-    background-color: #fff;
-    height: 2rem;
-    padding: 0.5rem 0;
-    box-shadow: -15px 10px 9px 1px rgba(0, 0, 0, 0.2);
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  width: 100%;
+  position: fixed;
+  background-color: #fff;
+  height: 2rem;
+  padding: 0.5rem 0;
+  box-shadow: -15px 10px 9px 1px rgba(0, 0, 0, 0.2);
 }
 
 .nav-data {
-    display: flex;
+  display: flex;
 }
 
 .nav-data[data-visible="true"] {
-    transform: translateX(0%);
+  transform: translateX(0%);
 }
 
 .nav-data li a {
-    padding: 0 2rem;
+  padding: 0 2rem;
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .ft-banner {
-    background-color: #f9f6f6;
-    border-radius: 1rem;
-    /* #f7f6f6 */
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: bold;
-    font-size: x-large;
+  background-color: #f9f6f6;
+  border-radius: 1rem;
+  /* #f7f6f6 */
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bold;
+  font-size: x-large;
 }
 
 .ft-banner .ft-details {
-    text-align: center;
+  text-align: center;
 }
 
 .ft-banner-heading {
-    color: var(--1st, #181E4B);
-    font-size: 3rem;
+  color: var(--1st, #181e4b);
+  font-size: 3rem;
 }
 
 .ft-details p {
-    color: #f5853d;
-    font-size: 1.5rem;
+  color: #f5853d;
+  font-size: 1.5rem;
 }
 
 .hr-line {
-    border: 1px solid black;
-    margin: 2rem 0;
+  border: 1px solid black;
+  margin: 2rem 0;
 }
 
 footer {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1rem;
 }
 
-.links>* {
-    text-align: center;
-    padding: 0.5rem;
+.links > * {
+  text-align: center;
+  padding: 0.5rem;
 }
 
 .links img {
-    height: 28px;
-    width: 28px;
+  height: 28px;
+  width: 28px;
 }
 
 .company-logo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.company-logo>* {
-    text-align: center;
-    margin: 0;
+.company-logo > * {
+  text-align: center;
+  margin: 0;
 }
 
 .author {
-    text-align: center;
+  text-align: center;
+}
+
+.modal {
+  max-width: 50%;
+  border: 1px solid brown;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: 1rem;
+}
+.blur-active {
+  filter: blur(0.2rem);
+}
+.modal-form button {
+  background-color: #f1a501;
+  color: #fff;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+.error-container {
+  position: relative;
+}
+.error-display {
+  color: #ff0000;
+  position: absolute;
 }
 
 @media (max-width: 1040px) {
-    footer {
-        display: grid;
-        grid-template-columns: repeat(3, auto);
-        grid-template-rows: repeat(2, auto);
-    }
+  footer {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
+  }
 
-    .company-logo {
-        grid-column: span 2;
-    }
+  .company-logo {
+    grid-column: span 2;
+  }
 }
 
 @media (max-width: 600px) {
-    footer {
-        display: grid;
-        grid-template-columns: repeat(2, auto);
-        grid-template-rows: repeat(3, auto);
-    }
+  footer {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+  }
 
-    .company-logo {
-        grid-column: span 2;
-    }
+  .company-logo {
+    grid-column: span 2;
+  }
 }
 
 /* Responsive nav bar */
 @media (max-width: 787px) {
-    .nav-data li a {
-        padding: 0 1rem;
-    }
+  .nav-data li a {
+    padding: 0 1rem;
+  }
 }
 
 @media (max-width: 627px) {
-    .nav-data li a {
-        padding: 0 0.5rem;
-    }
+  .nav-data li a {
+    padding: 0 0.5rem;
+  }
 }
 
 @media (max-width: 40em) {
-    .nav-data li {
-        display: none;
-    }
+  .nav-data li {
+    display: none;
+  }
 
-    .toggle-nav-bar {
-        display: flex;
-    }
+  .toggle-nav-bar {
+    display: flex;
+  }
 
-    .nav-data {
-        position: fixed;
-        inset: 0 0 0 30%;
-        background: #fff1da;
-        opacity: 0.95;
-        flex-direction: column;
-        padding: 2rem;
-        border: 1px solid black;
-        backdrop-filter: blur(1rem);
-        transform: translateX(100%);
-        transition: transform 350ms cubic-bezier(0.47, 0, 0.75, 0.72);
-    }
+  .nav-data {
+    position: fixed;
+    inset: 0 0 0 30%;
+    background: #fff1da;
+    opacity: 0.95;
+    flex-direction: column;
+    padding: 2rem;
+    border: 1px solid black;
+    backdrop-filter: blur(1rem);
+    transform: translateX(100%);
+    transition: transform 350ms cubic-bezier(0.47, 0, 0.75, 0.72);
+  }
 
-    .nav-data li {
-        display: block;
-        padding: 1rem;
-        font-size: 1.5rem;
-    }
+  .nav-data li {
+    display: block;
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
 }
