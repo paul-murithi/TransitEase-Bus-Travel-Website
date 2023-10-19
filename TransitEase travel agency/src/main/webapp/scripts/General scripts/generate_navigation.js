@@ -10,15 +10,15 @@ const navigationItems = [
   },
   {
     site: "Book now",
-    href: "/TransitEase_travel_agency/Pages/Ticket_Booking_Page/index.html",
+    href: "/TransitEase_travel_agency/Pages/Ticket_Booking_Page/index.jsp",
   },
   {
     site: "Log in",
     href: "/TransitEase_travel_agency/Pages/login_page/index.jsp",
   },
   {
-    site: "Sign up",
-    href: "/TransitEase_travel_agency/Pages/sign_up/index.html",
+    site: "My account",
+    href: "/TransitEase_travel_agency/Pages/account_profile/index.jsp",
   },
 ];
 // Generate page logo

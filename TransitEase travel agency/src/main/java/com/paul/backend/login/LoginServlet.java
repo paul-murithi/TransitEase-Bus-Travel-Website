@@ -1,7 +1,6 @@
 package com.paul.backend.login;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,13 +32,14 @@ public class LoginServlet extends HttpServlet {
 			System.out.println(userName + ": " + passWord);
 			loggedIn = login.logInUser(userName, passWord);
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		if (loggedIn) {
 			HttpSession session = request.getSession();
 			session.setAttribute("username", userName);
+			
+			
 
 			response.sendRedirect("/TransitEase_travel_agency/Pages/Homepage/index.jsp");
 		}

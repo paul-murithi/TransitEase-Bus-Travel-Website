@@ -18,7 +18,7 @@ function navigateToSelectSeat() {
     //validate all inputs are filled    
     if (inpt_to && inpt_from && inpt_date) {
         // Construct the URL with parameters
-        const url = `selectSeats.html?to=${encodeURIComponent(inpt_to)}&from=${encodeURIComponent(inpt_from)}&date=${encodeURIComponent(inpt_date)}`;
+        const url = `selectSeats.jsp?to=${encodeURIComponent(inpt_to)}&from=${encodeURIComponent(inpt_from)}&date=${encodeURIComponent(inpt_date)}`;
         // Navigate to the selectSeat.html page
         window.location.href = url;
     }

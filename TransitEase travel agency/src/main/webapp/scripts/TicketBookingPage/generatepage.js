@@ -63,7 +63,7 @@ function handleProceed() {
 function showCheckoutPage(seats) {
   if (seats != "") {
     console.log("You have chose seat: " + seats);
-    const url = `checkout.html?seatNumber=${encodeURIComponent(seats)}`;
+    const url = `checkout.jsp?seatNumber=${encodeURIComponent(seats)}`;
     window.location.href = url;
   }
   else {
