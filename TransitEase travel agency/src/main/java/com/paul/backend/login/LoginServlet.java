@@ -29,7 +29,6 @@ public class LoginServlet extends HttpServlet {
 
 		boolean loggedIn = false;
 		try {
-			System.out.println(userName + ": " + passWord);
 			loggedIn = login.logInUser(userName, passWord);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
@@ -38,8 +37,6 @@ public class LoginServlet extends HttpServlet {
 		if (loggedIn) {
 			HttpSession session = request.getSession();
 			session.setAttribute("username", userName);
-			
-			
 
 			response.sendRedirect("/TransitEase_travel_agency/Pages/Homepage/index.jsp");
 		}

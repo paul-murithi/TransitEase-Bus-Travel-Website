@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 pageEncoding="ISO-8859-1"%>
+<%
+	if(session.getAttribute("username") == null){
+		response.sendRedirect("/TransitEase_travel_agency/Pages/login_page/index.jsp");
+	}
+%>
 <!DOCTYPE html>
 <html lang="en">
   <head>

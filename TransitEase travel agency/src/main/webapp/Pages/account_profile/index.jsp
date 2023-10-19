@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 pageEncoding="ISO-8859-1"%>
+<%
+	if(session.getAttribute("username") == null){
+		response.sendRedirect("/TransitEase_travel_agency/Pages/login_page/index.jsp");
+	}
+%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -83,7 +88,7 @@ pageEncoding="ISO-8859-1"%>
           >
           to start travelling now!
         </p>
-        <form action="#" class="log-out-btn">
+        <form action="/TransitEase_travel_agency/Logout" method="post" class="log-out-btn">
           <button type="submit">LOG OUT</button>
         </form>
       </div>
