@@ -1,10 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-pageEncoding="ISO-8859-1"%>
-<%
-	if(session.getAttribute("username") == null){
-		response.sendRedirect("/TransitEase_travel_agency/Pages/login_page/index.jsp");
-	}
-%>
+pageEncoding="ISO-8859-1"%> <% if(session.getAttribute("username") == null){
+response.sendRedirect("/TransitEase_travel_agency/Pages/login_page/index.jsp");
+} %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -45,15 +42,15 @@ pageEncoding="ISO-8859-1"%>
       <div class="dashboard-heading"></div>
       <div class="input-group">
         <label for="first-name">First name</label>
-        <input type="text" value="Kirera" disabled />
+        <input id="first-name" type="text" value="Kirera" disabled />
       </div>
       <div class="input-group">
         <label for="second-name">Second name</label>
-        <input type="text" value="paul" disabled />
+        <input id="second-name" type="text" value="paul" disabled />
       </div>
       <div class="js-edit-btn">
-        <button>edit info</button>
-        <button>Save changes</button>
+        <button id="edit-personal-details">edit info</button>
+        <button id="save-personal-details">Save changes</button>
       </div>
     </fieldset>
 
@@ -61,19 +58,20 @@ pageEncoding="ISO-8859-1"%>
       <legend><strong>Contact details:</strong></legend>
       <div class="input-group">
         <label for="email">Email</label>
-        <input type="text" value="paulmurithi233@gmail.com" disabled />
-      </div>
-      <div class="input-group">
-        <label for="second-name">Address</label>
-        <input type="text" value="paul" disabled />
+        <input
+          id="email"
+          type="text"
+          value="paulmurithi233@gmail.com"
+          disabled
+        />
       </div>
       <div class="input-group">
         <label for="phone number">Phone number</label>
-        <input type="text" value="0741862946" disabled />
+        <input id="phone" type="text" value="0741862946" disabled />
       </div>
       <div class="js-edit-btn">
-        <button>edit info</button>
-        <button>Save changes</button>
+        <button id="edit-contact-details">edit info</button>
+        <button id="save-contact-details">Save changes</button>
       </div>
     </fieldset>
 
@@ -88,10 +86,16 @@ pageEncoding="ISO-8859-1"%>
           >
           to start travelling now!
         </p>
-        <form action="/TransitEase_travel_agency/Logout" method="post" class="log-out-btn">
+        <form
+          action="/TransitEase_travel_agency/Logout"
+          method="post"
+          class="log-out-btn"
+        >
           <button type="submit">LOG OUT</button>
         </form>
       </div>
     </fieldset>
+
+    <script src="/TransitEase_travel_agency/scripts/accountProfile/script.js"></script>
   </body>
 </html>
