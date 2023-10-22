@@ -7,13 +7,16 @@ signUpButton.addEventListener("click", validateForm);
 const showError = document.querySelector(".error-display");
 
 function validateForm(event) {
-  const userName = document.getElementById("userName").value;
+  const firstName = document.getElementById("firstName").value;
+  const secondName = document.getElementById("secondName").value;
   const email = document.getElementById("email").value;
+  const phoneNo = document.getElementById("phoneNo").value;
 
   if (
     validatePassword() &&
-    validateUsername(userName) &&
-    validateEmail(email)
+    validateUsername(firstName, secondName) &&
+    validateEmail(email) &&
+    validatePhoneNumber(phoneNo)
   ) {
     document.getElementById("registrationForm").submit();
     return false; // Prevent immediate form submission
@@ -42,8 +45,8 @@ function validatePassword() {
   }
 }
 
-function validateUsername(username) {
-  if (username) {
+function validateUsername(firstName, secondName) {
+  if (firstName && secondName) {
     return true;
   } else {
     showError.textContent = "Username cannot be empty";
@@ -57,5 +60,16 @@ function validateEmail(email) {
   } else {
     showError.textContent = "Invalid email";
     return false;
+  }
+}
+function validatePhoneNumber(number){
+	const phoneNumberPattern = /^\d{10}$/;
+  	if (!phoneNumberPattern.test(number)) {
+    showError.textContent =
+      "Phone Number should contain exactly 10 digits.";
+    return false;
+  }
+  else {
+	  return true;
   }
 }

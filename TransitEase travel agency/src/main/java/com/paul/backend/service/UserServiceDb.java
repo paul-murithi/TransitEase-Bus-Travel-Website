@@ -7,10 +7,9 @@ import java.sql.SQLException;
 
 public class UserServiceDb {
 	// Returns true if the database insertion is succesfull
-	public boolean registerUser(String username, String email, String password)
+	// firstName, secondName, email, password, phoneNo
+	public boolean registerUser(String firstname, String secondname, String email, String password, String phoneno)
 			throws ClassNotFoundException, SQLException {
-
-		System.out.println("register user class called: " + username);
 
 		try {
 			// Create a connection and send data to the database
@@ -18,7 +17,7 @@ public class UserServiceDb {
 			String user = "root";
 			String pass = "573800";
 
-			String query = "INSERT INTO log_in  (user_name, email, user_password)  VALUES (?,?,?)";
+			String query = "INSERT INTO log_in (first_name,second_name, email, user_password, phone_no) VALUES (?, ?, ?, ?, ?)";
 
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -26,9 +25,11 @@ public class UserServiceDb {
 
 			PreparedStatement ps = con.prepareStatement(query);
 
-			ps.setString(1, username);
-			ps.setString(2, email);
-			ps.setString(3, password);
+			ps.setString(1, firstname);
+			ps.setString(2, secondname);
+			ps.setString(3, email);
+			ps.setString(4, password);
+			ps.setString(5, phoneno);
 
 			int row = ps.executeUpdate();
 

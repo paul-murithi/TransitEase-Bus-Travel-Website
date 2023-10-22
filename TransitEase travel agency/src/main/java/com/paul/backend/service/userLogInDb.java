@@ -11,20 +11,20 @@ import java.sql.ResultSet;
  * Returns true if user is found and false otherwise
  */
 public class userLogInDb {
-	public boolean logInUser(String username, String password) throws ClassNotFoundException {
+	public boolean logInUser(String email, String password) throws ClassNotFoundException {
 
 		String url = "jdbc:mysql://127.0.0.1:3306/passenger_data";
 		String user = "root";
 		String pass = "573800";
 
-		String query = "SELECT * FROM log_in WHERE user_name = ? AND user_password = ? ";
+		String query = "SELECT * FROM log_in WHERE email = ? AND user_password = ? ";
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection(url, user, pass);
 
 			PreparedStatement ps = con.prepareStatement(query);
-			ps.setString(1, username);
+			ps.setString(1, email);
 			ps.setString(2, password);
 
 			ResultSet rs = ps.executeQuery();

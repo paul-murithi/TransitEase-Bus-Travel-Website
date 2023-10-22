@@ -22,21 +22,21 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		// Get the user inputs
-		String userName = request.getParameter("userName");
+		String email = request.getParameter("email");
 		String passWord = request.getParameter("password");
 
 		userLogInDb login = new userLogInDb();
 
 		boolean loggedIn = false;
 		try {
-			loggedIn = login.logInUser(userName, passWord);
+			loggedIn = login.logInUser(email, passWord);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 
 		if (loggedIn) {
 			HttpSession session = request.getSession();
-			session.setAttribute("username", userName);
+			session.setAttribute("username", email);
 
 			response.sendRedirect("/TransitEase_travel_agency/Pages/Homepage/index.jsp");
 		}

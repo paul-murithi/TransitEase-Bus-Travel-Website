@@ -33,11 +33,11 @@
           method="post"
           class="login-form"
         >
-          <label for="name">Enter your username:</label>
+          <label for="name">Enter your email:</label>
           <input
-            type="text"
-            placeholder="Enter your username"
-            name="userName"
+            type="email"
+            placeholder="Enter your email"
+            name="email"
             required
           />
 

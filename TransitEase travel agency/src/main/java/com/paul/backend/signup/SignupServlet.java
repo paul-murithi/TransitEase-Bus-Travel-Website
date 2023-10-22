@@ -29,14 +29,17 @@ public class SignupServlet extends HttpServlet {
 		 * Data to be sent to the server: 1. Username 2. Email 3. Password
 		 */
 		// Get data from the inputs
-		String userName = request.getParameter("userName");
+		String firstName = request.getParameter("firstName");
+		String secondName = request.getParameter("secondName");
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-
+		String phoneNo = request.getParameter("phoneNo");
+		
 		UserServiceDb userService = new UserServiceDb();
+		
 		boolean registrationSuccess = false;
 		try {
-			registrationSuccess = userService.registerUser(userName, email, password);
+			registrationSuccess = userService.registerUser(firstName, secondName, email, password, phoneNo);
 		} catch (ClassNotFoundException | SQLException e) {
 			System.out.println("Class not reached");
 			e.printStackTrace();
@@ -47,6 +50,7 @@ public class SignupServlet extends HttpServlet {
 		} else {
 			response.sendRedirect("/TransitEase_travel_agency/Pages/sign_up/index.jsp?registration=failed");
 		}
+
 	}
 
 }
