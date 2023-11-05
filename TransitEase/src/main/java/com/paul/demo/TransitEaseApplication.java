@@ -1,4 +1,4 @@
-package com.paul.main;
+package com.paul.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

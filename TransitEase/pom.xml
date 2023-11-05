@@ -12,7 +12,7 @@
 	<artifactId>TransitEase</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>TransitEase</name>
-	<description>Project for TransitEase travel agency with ticket booking system.</description>
+	<description>Demo project for TransitEase</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -23,7 +23,15 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.session</groupId>
+			<artifactId>spring-session-core</artifactId>
 		</dependency>
 
 		<dependency>
@@ -34,6 +42,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
