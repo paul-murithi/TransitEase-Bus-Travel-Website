@@ -10,4 +10,5 @@ public class TransitEaseApplication {
 		SpringApplication.run(TransitEaseApplication.class, args);
 	}
 
+	
 }
