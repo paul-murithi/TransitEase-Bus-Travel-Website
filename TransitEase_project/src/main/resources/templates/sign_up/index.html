@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+    <link rel="stylesheet" href="/Styles/SignupPage/signup.css" />
+    <link rel="stylesheet" href="/Styles/Shared_styles/shared_styles.css" />
+  </head>
+
+  <body>
+    <nav id="navigation-menu"></nav>
+
+    <main class="signup-container">
+      <h1 class="signup-heading">Create an account</h1>
+      <form method="post" action="/Signup" id="registrationForm">
+        <div class="input-group border-true">
+          <label for="firstName">First name</label>
+          <input
+            type="text"
+            placeholder="First Name"
+            name="firstName"
+            id="firstName"
+            required
+          />
+          <label for="secondName">Second name</label>
+          <input
+            type="text"
+            placeholder="Second name"
+            name="secondName"
+            id="secondName"
+            required
+          />
+        </div>
+
+        <div class="input-group border-true">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            placeholder="Email"
+            name="email"
+            id="email"
+            required
+          />
+          <label for="phoneNo">Phone number</label>
+          <input
+            type="tel"
+            placeholder="Phone number"
+            name="phoneNo"
+            id="phoneNo"
+            required
+          />
+        </div>
+
+        <div class="input-group-psw border-true">
+          <div class="input-group passwords">
+            <label for="password">Enter your password</label>
+            <input
+              type="password"
+              placeholder="Password"
+              id="password"
+              name="password"
+              required
+            />
+            <label for="confirm-password">Confirm your password</label>
+            <input
+              type="password"
+              id="confirm-password"
+              placeholder="Confirm password"
+              name="rePass"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="error-container">
+          <p class="error-display"></p>
+        </div>
+
+        <div class="input-group-btn">
+          <div class="input-group submit-btns">
+            <button
+              type="submit"
+              title="create account"
+              class="submit-btns-1"
+              id="js-sign-up"
+            >
+              Create account
+            </button>
+            <button
+              type="submit"
+              title="continue with google"
+              class="submit-btns-2"
+            >
+              Sign up with Google
+            </button>
+          </div>
+        </div>
+      </form>
+      <p class="signup-heading-par">
+        Already have a account?
+        <a href="/Pages/login_page/index.jsp">Log in</a>
+      </p>
+    </main>
+
+    <script src="/scripts/General scripts/generate_navigation.js"></script>
+    <script src="/scripts/signUpPage/signUp.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const errorDisplay = document.querySelector(".error-display");
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get("failed");
+
+        if (error) {
+          errorDisplay.innerText =
+            "There was an error registering you, please try again later";
+        }
+      });
+    </script>
+  </body>
+</html>
