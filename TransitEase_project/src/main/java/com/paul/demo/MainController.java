@@ -3,16 +3,8 @@ package com.paul.demo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-/*import ch.qos.logback.core.model.Model;*/
-import org.springframework.ui.Model;
-
 @Controller
 public class MainController {
-    @GetMapping("/")
-    public String index(Model model) {
-        model.addAttribute("message", "Hello, Thymeleaf!");
-        return "index"; // Returns "index.html" from the templates folder
-    }
 
     @GetMapping("/Home")
     public String HomeController() {
@@ -37,6 +29,11 @@ public class MainController {
     @GetMapping("/MyAccount")
     public String MyAccountController() {
         return "/account_profile/index";
+    }
+
+    @GetMapping("/Signup")
+    public String SignupController() {
+        return "/sign_up/index";
     }
 
 }
