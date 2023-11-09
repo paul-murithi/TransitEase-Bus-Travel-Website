@@ -12,44 +12,73 @@
     <nav id="navigation-menu"></nav>
 
     <main class="signup-container">
+      <div th:if="${param.success}">
+        <div class="alert alert-info">
+          You have successfully registered our app!
+        </div>
+      </div>
       <h1 class="signup-heading">Create an account</h1>
-      <form method="post" action="/Signup" id="registrationForm">
+      <form
+        method="POST"
+        th:action="@{/register/save}"
+        id="registrationForm"
+        th:object="${user}"
+      >
         <div class="input-group border-true">
           <label for="firstName">First name</label>
           <input
             type="text"
+            th:field="*{firstName}"
             placeholder="First Name"
             name="firstName"
             id="firstName"
             required
           />
+          <p
+            th:errors="*{firstName}"
+            class="text-danger"
+            th:if="${#fields.hasErrors('firstName')}"
+          ></p>
           <label for="secondName">Second name</label>
           <input
             type="text"
             placeholder="Last name"
             name="lastName"
             id="secondName"
+            th:field="*{lastName}"
             required
           />
+          <p
+            th:errors="*{lastName}"
+            class="text-danger"
+            th:if="${#fields.hasErrors('lastName')}"
+          ></p>
         </div>
 
         <div class="input-group border-true">
           <label for="email">Email</label>
           <input
             type="email"
-            placeholder="Email"
+            placeholder="Enter Email address"
             name="email"
+            th:field="*{email}"
             id="email"
             required
           />
-          <label for="phoneNo">Phone number</label>
+          <p
+            th:errors="*{email}"
+            class="text-danger"
+            th:if="${#fields.hasErrors('email')}"
+          ></p>
+
+          <!--<label for="phoneNo">Phone number</label>
           <input
             type="tel"
             placeholder="Phone number"
             name="phoneNo"
             id="phoneNo"
             required
-          />
+          />-->
         </div>
 
         <div class="input-group-psw border-true">
@@ -60,8 +89,14 @@
               placeholder="Password"
               id="password"
               name="password"
+              th:field="*{password}"
               required
             />
+            <p
+              th:errors="*{password}"
+              class="text-danger"
+              th:if="${#fields.hasErrors('password')}"
+            ></p>
             <label for="confirm-password">Confirm your password</label>
             <input
               type="password"
@@ -99,7 +134,7 @@
       </form>
       <p class="signup-heading-par">
         Already have a account?
-        <a href="/Pages/login_page/index.jsp">Log in</a>
+        <a th:href="@{/login}">Log in</a>
       </p>
     </main>
 

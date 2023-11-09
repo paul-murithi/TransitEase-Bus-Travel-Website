@@ -10,13 +10,13 @@ function validateForm(event) {
   const firstName = document.getElementById("firstName").value;
   const secondName = document.getElementById("secondName").value;
   const email = document.getElementById("email").value;
-  const phoneNo = document.getElementById("phoneNo").value;
+ /* const phoneNo = document.getElementById("phoneNo").value;*/
 
   if (
     validatePassword() &&
     validateUsername(firstName, secondName) &&
-    validateEmail(email) &&
-    validatePhoneNumber(phoneNo)
+    validateEmail(email) /*&&
+    validatePhoneNumber(phoneNo)*/
   ) {
     document.getElementById("registrationForm").submit();
     return false; // Prevent immediate form submission

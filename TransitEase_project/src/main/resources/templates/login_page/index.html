@@ -21,7 +21,14 @@
         <div class="login-heading">
           <h1 class="log-in-header">Welcome back, please log in to continue</h1>
         </div>
-        <form action="/Login" method="post" class="login-form">
+        <div th:if="${param.error}">
+          <div class="alert alert-danger">Invalid Email or Password</div>
+        </div>
+        <div th:if="${param.logout}">
+          <div class="alert alert-success">You have been logged out.</div>
+        </div>
+
+        <form th:action="@{/login}" method="post" class="login-form">
           <label for="name">Enter your email:</label>
           <input
             type="email"
@@ -48,8 +55,8 @@
         </form>
         <div class="login-sign-up">
           <p>
-            Dont have a account?
-            <a href="/Signup">sign up</a>
+            Not registered ?
+            <a th:href="@{/register}">Register/Signup here</a>
           </p>
         </div>
       </div>
