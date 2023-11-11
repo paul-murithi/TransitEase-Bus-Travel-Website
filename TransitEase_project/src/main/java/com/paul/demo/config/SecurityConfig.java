@@ -1,8 +1,9 @@
-package com.paul.demo.security;
+package com.paul.demo.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -20,27 +21,30 @@ public class SecurityConfig {
 	private UserDetailsService userDetailsService;
 
 	@Bean
-	static PasswordEncoder passwordEncoder() {
+	public static PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
 
 	@Bean
-	SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		http.csrf(csrf -> csrf.disable())
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+		http.csrf(Customizer.withDefaults())
 				.authorizeHttpRequests((authorize) -> authorize.requestMatchers("/register/**").permitAll()
-						.requestMatchers("/index").permitAll()
-						.requestMatchers("/users").hasRole("ADMIN"))
+						.requestMatchers("/Home").permitAll()
+						.requestMatchers("/users").hasRole("ADMIN")
+						.requestMatchers("/Assets/**", "/scripts/**", "/Styles/**").permitAll()
+						.requestMatchers("/destinations", "/Booking", "/MyAccount").authenticated().anyRequest()
+						.permitAll())
+
 				.formLogin(
 						form -> form
-								.loginPage("/login")
-								.loginProcessingUrl("/login")
-								.defaultSuccessUrl("/Homepage/index")
+								.loginPage("/Login")
+								.loginProcessingUrl("/Login")
+								.defaultSuccessUrl("/Home")
 								.permitAll())
 				.logout(
 						logout -> logout
 								.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 								.permitAll());
-
 		return http.build();
 	}
 
@@ -50,5 +54,4 @@ public class SecurityConfig {
 				.userDetailsService(userDetailsService)
 				.passwordEncoder(passwordEncoder());
 	}
-
 }

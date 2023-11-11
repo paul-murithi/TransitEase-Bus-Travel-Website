@@ -28,7 +28,7 @@ public class MainController {
         return "/Homepage/index";
     }
 
-    @GetMapping("/Destinations")
+    @GetMapping("/destinations")
     public String DestinationsController() {
         return "/Destinations/destinations";
     }
@@ -38,7 +38,7 @@ public class MainController {
         return "/Ticket_Booking_Page/index";
     }
 
-    @GetMapping("/login")
+    @GetMapping("/Login")
     public String LoginController() {
         return "/login_page/index";
     }
@@ -61,7 +61,7 @@ public class MainController {
     public String registration(@Validated @ModelAttribute("user") UserDto userDto,
             BindingResult result,
             Model model) {
-        User existingUser = userService.findUserByEmail(userDto.getEmail());
+        User existingUser = userService.findByEmail(userDto.getEmail());
 
         if (existingUser != null && existingUser.getEmail() != null && !existingUser.getEmail().isEmpty()) {
             result.rejectValue("email", null,

@@ -4,12 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log in</title>
-    <link rel="stylesheet" href="/Styles/LoginPage/login.css" />
-    <link rel="stylesheet" href="/Styles/Shared_styles/shared_styles.css" />
-    <script
-      src="/scripts/General scripts/generate_navigation.js"
-      defer
-    ></script>
+    <link rel="stylesheet" th:href="@{/Styles/LoginPage/login.css}" />
+    <link
+      rel="stylesheet"
+      th:href="@{/Styles/Shared_styles/shared_styles.css}"
+    />
   </head>
 
   <body>
@@ -28,12 +27,18 @@
           <div class="alert alert-success">You have been logged out.</div>
         </div>
 
-        <form th:action="@{/login}" method="post" class="login-form">
-          <label for="name">Enter your email:</label>
+        <form
+          th:action="@{/Login}"
+          method="post"
+          class="login-form"
+          role="form"
+        >
+          <label for="username">Enter your email:</label>
           <input
-            type="email"
-            placeholder="Enter your email"
-            name="email"
+            type="text"
+            id="username"
+            placeholder="Enter your Email"
+            name="username"
             required
           />
 
@@ -42,6 +47,7 @@
             type="password"
             placeholder="Enter your password"
             name="password"
+            id="password"
             required
           />
 
@@ -62,18 +68,9 @@
       </div>
     </div>
 
+    <script
+      th:src="@{/scripts/General scripts/generate_navigation.js}"
+    ></script>
     <script src="/scripts/logInPage/login.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const errorDisplay = document.querySelector(".error-display");
-        const urlParams = new URLSearchParams(window.location.search);
-        const error = urlParams.get("error");
-
-        if (error) {
-          errorDisplay.innerText =
-            "User not found! Please check your login credentials and try again";
-        }
-      });
-    </script>
   </body>
 </html>

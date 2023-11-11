@@ -6,7 +6,7 @@ const navigationItems = [
   },
   {
     site: "Destinations",
-    href: "/Destinations",
+    href: "/destinations",
   },
   {
     site: "Book now",
