@@ -3,12 +3,17 @@ body {
   background-repeat: no-repeat;
   background-position: right;
 }
-.page-container {
+main {
   display: flex;
-  height: 100vh;
-  margin-top: 3rem;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+}
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
 }
 
 .travel-banner {
@@ -37,8 +42,8 @@ body {
   justify-content: space-evenly;
   background-color: #f1a501;
   border-radius: 1rem;
-  height: 20rem;
-  width: 45rem;
+  /* height: 20rem;*/
+  width: 85%;
   padding: 0.5rem;
 }
 
@@ -95,30 +100,31 @@ ul .suggestion-list:hover {
   background-color: #ff6260;
   color: #fff;
   padding: 0.8rem;
+  width: 80%;
 }
 
 @media (max-width: 918px) {
-  .travel-info {
+  /* .travel-info {
     width: 38rem;
-  }
+  } */
 }
 
 @media (max-width: 790px) {
-  .travel-info {
+  /* .travel-info {
     width: 30rem;
-  }
+  } */
 }
 
 @media (max-width: 620px) {
-  .travel-info {
+  /* .travel-info {
     width: 25rem;
-  }
+  } */
 }
 
 @media (max-width: 516px) {
-  .travel-info {
+  /* .travel-info {
     width: 20rem;
-  }
+  } */
 }
 
 @media (max-width: 500px) {
@@ -127,9 +133,9 @@ ul .suggestion-list:hover {
     text-align: center;
   }
 
-  .page-container {
+  /* .page-container {
     flex-direction: column;
-  }
+  } */
 
   .travel-info-input {
     display: none;
@@ -138,7 +144,6 @@ ul .suggestion-list:hover {
   .travel-info {
     background-color: #f1a501;
     border-radius: 1rem;
-    height: 100%;
   }
 
   .travel-info form {
@@ -150,8 +155,6 @@ ul .suggestion-list:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 50%;
-    margin: 1rem 1rem;
   }
 
   .travel-dates > * {
@@ -164,8 +167,13 @@ ul .suggestion-list:hover {
     height: 2.2rem;
   }
 
+  .checkout-routes-btn {
+    justify-content: center;
+    align-items: center;
+  }
+
   .checkout-routes-btn button {
-    height: 3rem;
     font-size: 1.3rem;
+    width: 70%;
   }
 }

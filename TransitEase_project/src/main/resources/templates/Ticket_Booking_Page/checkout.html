@@ -19,12 +19,14 @@
           <h1>Booking summary:</h1>
           <fieldset class="trip-details">
             <legend>Trip details</legend>
-            <p class="seat-selected">Seat(s) selected: <span>25</span></p>
-            <p class="date-of-travel">
-              Date of travel: <span>23/04/2023</span>
+            <p class="seat-selected">
+              Seat(s) selected: <span th:text="${seat}"></span>
             </p>
-            <p class="departure-time">Departure time: <span>5:00PM</span></p>
-            <p class="total-cost">Amount: <span>2500 </span></p>
+            <p class="date-of-travel">
+              Date of travel: <span th:text="${date}"></span>
+            </p>
+            <p class="departure-time">Departure time: <span>1700 EAT</span></p>
+            <p class="total-cost">Amount: <span>2000</span></p>
           </fieldset>
           <fieldset class="customer-information">
             <legend>customer details</legend>

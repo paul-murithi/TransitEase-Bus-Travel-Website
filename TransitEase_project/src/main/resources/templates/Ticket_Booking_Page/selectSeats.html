@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/Styles/Shared_styles/shared_styles.css" />
     <link
       rel="stylesheet"
-      href="/Styles/TicketBookingPage/selectSeat/selectSeat.css"
+      th:href="@{/Styles/TicketBookingPage/selectSeat/selectSeat.css}"
     />
   </head>
 
@@ -16,23 +16,29 @@
     <div class="travelling-info-banner">
       <h1>Select your seat</h1>
       <div class="destinations">
-        <p id="Travel-from"></p>
+        <div class="travel-data-wrap">
+          <p>From:</p>
+          <p id="Travel-from" class="travel-data" th:text="${from}"></p>
+        </div>
         <img src="/Assets/images/icons8-bus-100 1.png" alt="bus icon" />
-        <p id="travel-to"></p>
+        <div class="travel-data-wrap">
+          <p>To:</p>
+          <p id="travel-to" class="travel-data" th:text="${to}"></p>
+        </div>
       </div>
-      <p id="travel-date" class="date-style"></p>
+      <p id="travel-date" class="travel-data" th:text="${date}"></p>
       <div class="travel-info">
-        <h1>Time of travel</h1>
+        <p><strong>Time of travel</strong></p>
         <p>
           <span id="travel-time"
             >6:00PM <span class="grayed-time">3:00PM</span></span
           >
         </p>
-        <h1>Bus name and ID</h1>
+        <p><strong>Bus name</strong></p>
         <p class="Bus name">FE-390 COACH</p>
-        <h1>Amount</h1>
+        <p><strong>Amount</strong></p>
         <p id="amount">600 Kshs</p>
-        <h1>Estimated time</h1>
+        <p><strong>Estimaated time</strong></p>
         <p>9 hours</p>
       </div>
     </div>

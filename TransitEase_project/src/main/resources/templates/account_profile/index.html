@@ -67,9 +67,7 @@
       <div class="input-group">
         <p>
           No current bookings. Visit our
-          <a href="/Pages/Ticket_Booking_Page/index.jsp"
-            ><strong>booking page</strong></a
-          >
+          <a th:href="@{/Booking}"><strong>booking page</strong></a>
           to start travelling now!
         </p>
         <form th:action="@{/logout}" method="post" class="log-out-btn">

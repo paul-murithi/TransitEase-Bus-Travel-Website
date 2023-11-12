@@ -161,12 +161,21 @@ footer {
 
 .error-container {
   position: relative;
+   margin: 0.5rem;
 }
 .error-display {
   color: #ff0000;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
 }
-
+.alert {
+	color: #ff0000;
+	text-transform: uppercase;
+	text-align: center;
+}
 @media (max-width: 1040px) {
   footer {
     display: grid;
