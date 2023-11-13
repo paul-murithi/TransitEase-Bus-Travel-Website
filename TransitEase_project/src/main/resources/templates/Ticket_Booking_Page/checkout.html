@@ -28,18 +28,17 @@
             <p class="departure-time">Departure time: <span>1700 EAT</span></p>
             <p class="total-cost">Amount: <span>2000</span></p>
           </fieldset>
-          <fieldset class="customer-information">
-            <legend>customer details</legend>
-            <form action="#" class="customer-details">
-              <label for="name">Name</label>
-              <input type="text" id="name" />
-              <label for="mpesa-number"
-                >Mobile number <strong>(M-pesa)</strong></label
-              >
-              <input type="tel" id="mpesa-number" />
-              <p id="errorMessages" style="color: red"></p>
-            </form>
-          </fieldset>
+          <div>
+            <fieldset class="terms-and-conditions">
+              <legend>Terms and conditions</legend>
+              <ol>
+                <li>Payment fee is non-refundable once booked.</li>
+                <li>Items over 15 kg have to be paid for.</li>
+                <li>Arrive 30 minutes before departure time.</li>
+                <li>No drugs are allowed during travel.</li>
+              </ol>
+            </fieldset>
+          </div>
         </div>
         <div class="booking-info-details">
           <fieldset>
@@ -79,21 +78,33 @@
             </div>
           </fieldset>
         </div>
-        <div class="checkout-details">
-          <fieldset class="terms-and-conditions">
-            <legend>Terms and conditions</legend>
-            <ol>
-              <li>Payment fee is non-refundable once booked.</li>
-              <li>Items over 15 kg have to be paid for.</li>
-              <li>Arrive 30 minutes before departure time.</li>
-              <li>No drugs are allowed during travel.</li>
-            </ol>
+
+        <div class="booking-info-details">
+          <fieldset class="customer-information">
+            <legend>customer details</legend>
+            <form
+              th:action="@{/Booking/save}"
+              class="customer-details"
+              method="post"
+            >
+              <label for="name">Name</label>
+              <input type="text" id="name" />
+              <label for="mpesa-number"
+                >Mobile number <strong>(M-pesa)</strong></label
+              >
+              <input type="tel" id="mpesa-number" />
+              <p id="errorMessages" style="color: red"></p>
+              <div class="checkout-button">
+                <button
+                  type="submit"
+                  id="js-checkout-button"
+                  class="open-modal"
+                >
+                  CONFIRM PAYMENT
+                </button>
+              </div>
+            </form>
           </fieldset>
-          <div class="checkout-button">
-            <button type="button" id="js-checkout-button" class="open-modal">
-              CONFIRM PAYMENT
-            </button>
-          </div>
         </div>
 
         <dialog class="modal">

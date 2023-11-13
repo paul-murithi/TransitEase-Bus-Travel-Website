@@ -12,6 +12,7 @@ checkOutButton.addEventListener("click", validateForm);
 function validateForm() {
   errorMessageContainer.innerHTML = "";
   // Check if all inputs are filled
+  const phoneNumber = phoneNumberInput.value;
   if (nameInput.value === "" && phoneNumberInput.value === "") {
     errorMessageContainer.innerHTML = "Name and Phone Number are required.";
     return;
@@ -34,6 +35,8 @@ function validateForm() {
       "Phone Number should contain exactly 10 digits.";
     return;
   }
+
   // If validateForm is true, open the modal
   openModal();
+  SaveBookingToServer(phoneNumber);
 }

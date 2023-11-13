@@ -9,12 +9,9 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import com.paul.demo.dto.UserDto;
 import com.paul.demo.entity.User;
 import com.paul.demo.service.UserService;
-
-import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class MainController {
@@ -37,60 +34,6 @@ public class MainController {
     @GetMapping("/destinations")
     public String DestinationsController() {
         return "/Destinations/destinations";
-    }
-
-    @GetMapping("/Booking")
-    public String BookingController() {
-        return "/Ticket_Booking_Page/index";
-    }
-
-    /**
-     * @param to
-     * @param from
-     * @param date
-     * @param model
-     * @param session
-     * @return Handler method to handle select seats page
-     */
-    @GetMapping("/Booking/selectseat")
-    public String selectSeats(
-            @RequestParam(name = "to", required = false) String to,
-            @RequestParam(name = "from", required = false) String from,
-            @RequestParam(name = "date", required = false) String date, Model model, HttpSession session) {
-
-        model.addAttribute("to", to);
-        model.addAttribute("from", from);
-        model.addAttribute("date", date);
-
-        session.setAttribute("to", to);
-        session.setAttribute("from", from);
-        session.setAttribute("date", date);
-        return "/Ticket_Booking_Page/selectSeats";
-    }
-
-    /**
-     * 
-     * @param model
-     * @param session
-     * @param seat
-     * @return Checkout page after getting all travelling data information
-     */
-    @GetMapping("/Booking/selectseat/checkout")
-    public String checkout(Model model, HttpSession session,
-            @RequestParam(name = "seatNumber", required = false) String seat) {
-
-        String Sessionto = (String) session.getAttribute("to");
-        String Sessionfrom = (String) session.getAttribute("from");
-        String Sessiondate = (String) session.getAttribute("date");
-
-        model.addAttribute("to", Sessionto);
-        model.addAttribute("from", Sessionfrom);
-        model.addAttribute("date", Sessiondate);
-        model.addAttribute("seat", seat);
-        /**
-         * To do - Send (to),(from),(date),(seats) to the database
-         */
-        return "/Ticket_Booking_Page/checkout";
     }
 
     @GetMapping("/Login")
