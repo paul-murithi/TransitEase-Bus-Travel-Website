@@ -1,8 +1,13 @@
 package com.paul.demo.Controller;
 
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -12,9 +17,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.paul.demo.entity.Bookings;
+import com.paul.demo.entity.Seats;
 import com.paul.demo.entity.User;
+import com.paul.demo.entity.seatsStatus.IsVipSeat;
+import com.paul.demo.entity.seatsStatus.SeatStatus;
 import com.paul.demo.repository.UserRepository;
 import com.paul.demo.service.booking.BookingService;
+import com.paul.demo.service.booking.SeatsService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -26,6 +35,9 @@ public class BookingController {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private SeatsService seatsService;
 
     @GetMapping("/Booking")
     public String bookingController() {
@@ -79,6 +91,7 @@ public class BookingController {
         model.addAttribute("to", destination);
         model.addAttribute("from", source);
         model.addAttribute("date", date);
+        model.addAttribute("seat", seat);
 
         return "/Ticket_Booking_Page/checkout";
     }
@@ -88,17 +101,32 @@ public class BookingController {
 
         String destination = (String) session.getAttribute("to");
         String source = (String) session.getAttribute("from");
-        String seat = (String) session.getAttribute("seat");
         // String phoneNumber = requestBody.get("key1");
         String dateString = (String) session.getAttribute("date");
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = dateFormat.parse(dateString);
 
+        String seatNumberString = (String) session.getAttribute("seat");
+
+        List<String> selectedSeats = new ArrayList<>();
+
+        // Check if there is multiple seats
+        if (seatNumberString.contains(",")) {
+            String[] seatNumbersArray = seatNumberString.split(",");
+            selectedSeats.addAll(Arrays.asList(seatNumbersArray));
+        } else {
+
+            selectedSeats.add(seatNumberString.trim());
+        }
+        BigDecimal totalPrice = IsVipSeat.calculatePrice(selectedSeats);
+        // Convert list of integers to comma-separated string
+        String seatNumbersString = String.join(",", seatNumberString);
+
         model.addAttribute("to", destination);
         model.addAttribute("from", source);
         model.addAttribute("date", date);
-        model.addAttribute("seat", seat);
+        model.addAttribute("seat", selectedSeats);
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String email = auth.getName();
@@ -111,6 +139,14 @@ public class BookingController {
         booking.setDate(date);
 
         bookingsService.saveBooking(booking);
+
+        Seats seats = new Seats();
+        seats.setBooking(booking);
+        seats.setSeatNumber(seatNumbersString);
+        seats.setStatus(SeatStatus.BOOKED);
+        seats.setPrice(totalPrice);
+
+        seatsService.saveSeats(seats);
 
         return "redirect:/Booking/selectseat/checkout?Booking success";
     }
