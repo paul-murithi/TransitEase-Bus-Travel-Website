@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -16,11 +17,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.paul.demo.entity.AllSeats;
 import com.paul.demo.entity.Bookings;
 import com.paul.demo.entity.Seats;
 import com.paul.demo.entity.User;
 import com.paul.demo.entity.seatsStatus.IsVipSeat;
 import com.paul.demo.entity.seatsStatus.SeatStatus;
+import com.paul.demo.repository.SeatsRepository;
 import com.paul.demo.repository.UserRepository;
 import com.paul.demo.service.booking.BookingService;
 import com.paul.demo.service.booking.SeatsService;
@@ -38,6 +42,9 @@ public class BookingController {
 
     @Autowired
     private SeatsService seatsService;
+
+    @Autowired
+    private SeatsRepository seatsRepository;
 
     @GetMapping("/Booking")
     public String bookingController() {
@@ -65,6 +72,14 @@ public class BookingController {
         session.setAttribute("to", to);
         session.setAttribute("from", from);
         session.setAttribute("date", date);
+
+        List<AllSeats> availableSeats = seatsService.getAvailableSeats();
+
+        // Get booked seat numbers
+        List<String> bookedSeatNumbers = seatsService.getBookedSeatNumbers();
+
+        model.addAttribute("availableSeats", availableSeats);
+        model.addAttribute("bookedSeatNumbers", bookedSeatNumbers);
         return "/Ticket_Booking_Page/selectSeats";
     }
 
@@ -137,8 +152,9 @@ public class BookingController {
         booking.setDestination(destination);
         booking.setSource(source);
         booking.setDate(date);
-
         bookingsService.saveBooking(booking);
+
+        List<String> seatNumbers = Arrays.asList(seatNumbersString.split(","));
 
         Seats seats = new Seats();
         seats.setBooking(booking);
@@ -146,7 +162,7 @@ public class BookingController {
         seats.setStatus(SeatStatus.BOOKED);
         seats.setPrice(totalPrice);
 
-        seatsService.saveSeats(seats);
+        seatsService.bookSeats(seats, seatNumbers, booking);
 
         return "redirect:/Booking/selectseat/checkout?Booking success";
     }

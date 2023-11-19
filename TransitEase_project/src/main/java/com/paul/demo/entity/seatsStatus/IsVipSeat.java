@@ -6,7 +6,7 @@ import java.util.List;
 public class IsVipSeat {
 
     private static boolean isVipSeat(String seatNumber) {
-        return Integer.parseInt(seatNumber) <= 14;
+        return Integer.parseInt(seatNumber) <= 12;
     }
 
     public static BigDecimal calculatePrice(List<String> seatNumbers) {

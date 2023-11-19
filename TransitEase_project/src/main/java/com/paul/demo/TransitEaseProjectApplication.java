@@ -9,5 +9,4 @@ public class TransitEaseProjectApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TransitEaseProjectApplication.class, args);
 	}
-
 }

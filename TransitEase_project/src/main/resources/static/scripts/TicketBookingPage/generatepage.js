@@ -4,9 +4,15 @@ for (i = 0; i < 12; i++) {
   vipSeats[i].classList.add("vip");
 }
 //Event handlers for the seats
-const seats = document.querySelectorAll(".test-seat");
+const seats = document.querySelectorAll(".seat");
 seats.forEach((seat) => {
-  seat.addEventListener("click", handleSeatSelection);
+  if (seat.classList.contains("bookedSeat")) {
+    seat.setAttribute("title", "This seat is already booked");
+    seat.setAttribute("aria-disabled", "true");
+    return;
+  } else {
+    seat.addEventListener("click", handleSeatSelection);
+  }
 });
 
 // Handle seat selection
@@ -42,8 +48,11 @@ function handleProceed() {
 function showCheckoutPage(seats) {
   if (seats != "") {
     console.log("You have chose seat: " + seats);
+    const seatsAsString = seats.join(" "); // Convert the array to a string
+    const cleanedSeats = seatsAsString.trim().replace(/\s+/g, ",");
+
     const url = `/Booking/selectseat/checkout?seatNumber=${encodeURIComponent(
-      seats
+      cleanedSeats
     )}`;
     window.location.href = url;
   } else {

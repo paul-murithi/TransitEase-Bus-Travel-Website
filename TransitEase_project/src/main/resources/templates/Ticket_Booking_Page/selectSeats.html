@@ -69,10 +69,21 @@
           </tr>
           <tr class="row-1">
             <td>
-              <div class="seat test-seat">1</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '1') ? 'bookedSeat' : 'availableSeat'}"
+                aria-disabled="true"
+              >
+                1
+              </div>
             </td>
             <td>
-              <div class="seat seat-2 test-seat">2</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '2') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                2
+              </div>
             </td>
             <td colspan="3" class="no-border"></td>
             <td class="driver-seat">Driver</td>
@@ -80,150 +91,355 @@
 
           <tr class="row-2">
             <td>
-              <div class="seat test-seat">3</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '3') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                3
+              </div>
             </td>
             <td>
-              <div class="seat test-seat">4</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '4') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                4
+              </div>
             </td>
             <td>
-              <div class="seat test-seat">5</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '5') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                5
+              </div>
             </td>
             <td class="no-border"></td>
             <td>
-              <div class="seat test-seat">6</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '6') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                6
+              </div>
             </td>
             <td>
-              <div class="seat test-seat">7</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '7') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                7
+              </div>
             </td>
           </tr>
 
           <tr class="row-3">
             <td>
-              <div class="seat test-seat">8</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '8') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                8
+              </div>
             </td>
             <td>
-              <div class="seat test-seat">9</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '9') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                9
+              </div>
             </td>
             <td>
-              <div class="seat test-seat">10</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '10') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                10
+              </div>
             </td>
             <td class="no-border"></td>
             <td>
-              <div class="seat test-seat">11</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '11') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                11
+              </div>
             </td>
             <td>
-              <div class="seat test-seat">12</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '12') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                12
+              </div>
             </td>
           </tr>
 
           <tr class="row-4">
             <td>
-              <div class="seat test-seat">13</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '13') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                13
+              </div>
             </td>
             <td>
-              <div class="booked seat test-seat">14</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '14') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                14
+              </div>
             </td>
             <td>
-              <div class="booked seat test-seat">15</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '15') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                15
+              </div>
             </td>
             <td class="no-border"></td>
             <td>
-              <div class="seat test-seat">16</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '16') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                16
+              </div>
             </td>
             <td>
-              <div class="seat test-seat">17</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '17') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                17
+              </div>
             </td>
           </tr>
           <tr class="row-5">
             <td>
-              <div class="seat test-seat">18</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '18') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                18
+              </div>
             </td>
             <td>
-              <div class="seat test-seat">19</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '19') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                19
+              </div>
             </td>
             <td>
-              <div class="seat test-seat">20</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '20') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                20
+              </div>
             </td>
             <td class="no-border"></td>
             <td>
-              <div class="seat test-seat">21</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '21') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                21
+              </div>
             </td>
             <td>
-              <div class="booked seat test-seat">22</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '22') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                22
+              </div>
             </td>
           </tr>
           <tr class="row-6">
             <td>
-              <div class="seat test-seat">23</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '23') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                23
+              </div>
             </td>
             <td>
-              <div class="seat test-seat">24</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '24') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                24
+              </div>
             </td>
             <td>
-              <div class="seat test-seat">25</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '25') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                25
+              </div>
             </td>
             <td class="no-border"></td>
             <td>
-              <div class="seat test-seat">26</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '26') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                26
+              </div>
             </td>
             <td>
-              <div class="seat test-seat">27</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '27') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                27
+              </div>
             </td>
           </tr>
           <tr class="row-7">
             <td>
-              <div class="seat test-seat">28</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '28') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                28
+              </div>
             </td>
             <td>
-              <div class="seat test-seat">29</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '29') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                29
+              </div>
             </td>
             <td>
-              <div class="seat test-seat">30</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '30') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                30
+              </div>
             </td>
             <td class="no-border"></td>
             <td>
-              <div class="seat test-seat">31</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '31') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                31
+              </div>
             </td>
             <td>
-              <div class="booked seat test-seat">32</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '32') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                32
+              </div>
             </td>
           </tr>
           <tr class="row-8">
             <td>
-              <div class="seat test-seat">33</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '33') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                33
+              </div>
             </td>
             <td>
-              <div class="seat test-seat">34</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '34') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                34
+              </div>
             </td>
             <td>
-              <div class="seat test-seat">35</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '35') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                35
+              </div>
             </td>
             <td class="no-border"></td>
             <td>
-              <div class="seat test-seat">36</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '36') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                36
+              </div>
             </td>
             <td>
-              <div class="seat test-seat">37</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '37') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                37
+              </div>
             </td>
           </tr>
           <tr class="row-9">
             <td>
-              <div class="seat test-seat">38</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '38') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                38
+              </div>
             </td>
             <td>
-              <div class="seat test-seat">39</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '39') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                39
+              </div>
             </td>
             <td>
-              <div class="seat test-seat">40</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '40') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                40
+              </div>
             </td>
             <td>
-              <div class="seat test-seat">41</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '41') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                41
+              </div>
             </td>
             <td>
-              <div class="seat test-seat">42</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '42') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                42
+              </div>
             </td>
             <td>
-              <div class="seat test-seat">43</div>
+              <div
+                class="seat"
+                th:class="'seat ' + ${#strings.contains(bookedSeatNumbers, '43') ? 'bookedSeat' : 'availableSeat'}"
+              >
+                43
+              </div>
             </td>
           </tr>
         </table>

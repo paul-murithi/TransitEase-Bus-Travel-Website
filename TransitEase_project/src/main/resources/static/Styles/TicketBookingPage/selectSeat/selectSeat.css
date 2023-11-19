@@ -107,7 +107,8 @@ table th,
   margin-top: 1rem;
 }
 
-.display-seats-container .seat-row-item table td:not(.no-border, .driver-seat) {
+.seat.availableSeat,
+table td:not(.no-border, .driver-seat) {
   height: 50px;
   background-color: #c2c1c4;
   /* padding: 5px; */
@@ -116,11 +117,10 @@ table th,
   cursor: pointer;
   text-align: center;
 }
-
-td,
-.booked,
-.vip {
-  border-radius: 1rem;
+.display-seats-container .seat-row-item table .bookedSeat {
+  background-color: #f5a522;
+  height: 50px;
+  cursor: auto;
 }
 
 .key-map {
@@ -129,19 +129,8 @@ td,
   align-items: center;
 }
 
-.vip {
-  background-color: #ef9a9a;
-  height: 50px;
-  color: #fff;
-}
-
 .key-map div {
   border-radius: 1rem;
-}
-
-.booked {
-  background-color: #f5a522;
-  height: 50px;
 }
 
 .keys {
@@ -190,15 +179,25 @@ td,
   background-color: #f6f4f0;
   border-radius: 0;
 }
-
-.selected {
+.seat.vip {
+  background-color: #ef9a9a;
+  height: 50px;
+  color: #fff;
+}
+.seat.selected,
+.vip.selected {
   background-color: #ff0000;
   width: 50px;
   height: 50px;
   transition: 350ms;
   border-radius: 1rem;
 }
-
+td,
+.booked,
+.vip,
+.seat {
+  border-radius: 1rem;
+}
 @media (max-width: 889px) {
   .nav-data li a {
     padding: 0 1rem;

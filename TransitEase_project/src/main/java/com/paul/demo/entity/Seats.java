@@ -33,11 +33,14 @@ public class Seats {
     @Column(name = "price")
     private BigDecimal price;
 
+    @Enumerated(EnumType.STRING)
+    private SeatStatus status;
+
     public Seats(Bookings booking, String seatNumber, BigDecimal price, SeatStatus status) {
         this.booking = booking;
         this.seatNumber = seatNumber;
         this.price = price;
-        this.status = status;
+        this.status = SeatStatus.AVAILABLE;
     }
 
     public Long getSeatId() {
@@ -79,9 +82,6 @@ public class Seats {
     public void setStatus(SeatStatus status) {
         this.status = status;
     }
-
-    @Enumerated(EnumType.STRING)
-    private SeatStatus status;
 
     public Seats() {
     }
