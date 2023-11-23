@@ -4,10 +4,15 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.hibernate.Hibernate;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.paul.demo.dto.BookingDto;
 import com.paul.demo.dto.UserDto;
+import com.paul.demo.entity.Bookings;
 import com.paul.demo.entity.Role;
 import com.paul.demo.entity.User;
 import com.paul.demo.repository.RoleRepository;
@@ -33,9 +38,6 @@ public class UserServiceImpl implements UserService {
         User user = new User();
         user.setName(userDto.getFirstName() + " " + userDto.getLastName());
         user.setEmail(userDto.getEmail());
-
-        // encrypt the password once we integrate spring security
-        // user.setPassword(userDto.getPassword());
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
         Role role = roleRepository.findByName("ROLE_ADMIN");
         if (role == null) {
@@ -71,6 +73,42 @@ public class UserServiceImpl implements UserService {
         Role role = new Role();
         role.setName("ROLE_ADMIN");
         return roleRepository.save(role);
+    }
+
+    @Override
+    public User getAuthenticatedUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return null;
+        }
+
+        Object principal = authentication.getPrincipal();
+        if (principal instanceof User) {
+            return (User) principal;
+        }
+
+        return null;
+    }
+
+    @Override
+    public List<BookingDto> getUserBookings(User user) {
+
+        Hibernate.initialize(user.getBookings());
+        // Fetch user bookings from the database and map them to DTO
+        List<Bookings> bookings = user.getBookings();
+        return bookings.stream()
+                .map(this::mapToBookingDto)
+                .collect(Collectors.toList());
+    }
+
+    private BookingDto mapToBookingDto(Bookings booking) {
+        BookingDto bookingDto = new BookingDto();
+        bookingDto.setSource(booking.getSource());
+        bookingDto.setDestination(booking.getDestination());
+        bookingDto.setDate(booking.getDate());
+        bookingDto.setId(booking.getBookingId());
+
+        return bookingDto;
     }
 
 }

@@ -19,7 +19,7 @@
       <figure class="img-cover">
         <img src="/Assets/icons/Image.svg" alt="profile" />
         <figcaption class="username">
-          <strong>Kirera paul murithi</strong>
+          <strong th:text="${name}"></strong>
         </figcaption>
       </figure>
     </div>
@@ -29,11 +29,21 @@
       <div class="dashboard-heading"></div>
       <div class="input-group">
         <label for="first-name">First name</label>
-        <input id="first-name" type="text" value="Kirera" disabled />
+        <input
+          id="first-name"
+          type="text"
+          th:value="${user.firstName}"
+          disabled
+        />
       </div>
       <div class="input-group">
         <label for="second-name">Second name</label>
-        <input id="second-name" type="text" value="paul" disabled />
+        <input
+          id="second-name"
+          type="text"
+          th:value="${user.lastName}"
+          disabled
+        />
       </div>
       <div class="js-edit-btn">
         <button id="edit-personal-details">edit info</button>
@@ -45,12 +55,7 @@
       <legend><strong>Contact details:</strong></legend>
       <div class="input-group">
         <label for="email">Email</label>
-        <input
-          id="email"
-          type="text"
-          value="paulmurithi233@gmail.com"
-          disabled
-        />
+        <input id="email" type="text" th:value="${user.email}" disabled />
       </div>
       <div class="input-group">
         <label for="phone number">Phone number</label>
@@ -64,12 +69,28 @@
 
     <fieldset class="main-dashboard">
       <legend><strong>Active bookings:</strong></legend>
-      <div class="input-group">
+
+      <!--If the user does not have any active bookings-->
+      <div th:if="${#lists.isEmpty(bookings)}" class="input-group">
         <p>
           No current bookings. Visit our
           <a th:href="@{/Booking}"><strong>booking page</strong></a>
-          to start travelling now!
+          to start traveling now!
         </p>
+        <form th:action="@{/logout}" method="post" class="log-out-btn">
+          <button type="submit">LOG OUT</button>
+        </form>
+      </div>
+
+      <!--If the user has any active bookings-->
+      <div th:unless="${#lists.isEmpty(bookings)}" class="input-group">
+        <ul>
+          <li th:each="booking : ${bookings}">
+            <p
+              th:utext="${booking.source + ' <strong>to</strong> ' + booking.destination + ' <strong>on</strong> ' + #dates.format(booking.date, 'yyyy-MM-dd')}"
+            ></p>
+          </li>
+        </ul>
         <form th:action="@{/logout}" method="post" class="log-out-btn">
           <button type="submit">LOG OUT</button>
         </form>

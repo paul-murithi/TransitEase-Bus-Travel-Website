@@ -2,6 +2,7 @@ package com.paul.demo.Controller;
 
 import java.util.List;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -9,6 +10,8 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import com.paul.demo.dto.BookingDto;
 import com.paul.demo.dto.UserDto;
 import com.paul.demo.entity.User;
 import com.paul.demo.service.UserService;
@@ -42,7 +45,23 @@ public class MainController {
     }
 
     @GetMapping("/MyAccount")
-    public String MyAccountController() {
+    public String myAccount(Model model, Authentication authentication) {
+        User user = userService.getAuthenticatedUser();
+        // Fetch user's bookings
+        List<BookingDto> bookings = userService.getUserBookings(user);
+
+        // Split the full name into first name and last name
+        String[] nameParts = user.getName().split(" ");
+        String userName = user.getName();
+
+        UserDto userDto = new UserDto();
+        userDto.setFirstName(nameParts[0]);
+        userDto.setLastName(nameParts[1]);
+        userDto.setEmail(user.getEmail());
+
+        model.addAttribute("user", userDto);
+        model.addAttribute("bookings", bookings);
+        model.addAttribute("name", userName);
         return "/account_profile/index";
     }
 
@@ -66,6 +85,7 @@ public class MainController {
         if (existingUser != null && existingUser.getEmail() != null && !existingUser.getEmail().isEmpty()) {
             result.rejectValue("email", null,
                     "There is already an account registered with the same email");
+            return "redirect:/register?emailerror";
         }
 
         if (result.hasErrors()) {

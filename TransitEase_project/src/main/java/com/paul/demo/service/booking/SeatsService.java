@@ -1,19 +1,14 @@
 package com.paul.demo.service.booking;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-
-import com.paul.demo.dto.SeatDto;
 import com.paul.demo.entity.AllSeats;
 import com.paul.demo.entity.Bookings;
 import com.paul.demo.entity.Seats;
-import com.paul.demo.entity.seatsStatus.IsVipSeat;
 import com.paul.demo.entity.seatsStatus.SeatStatus;
 import com.paul.demo.repository.AllSeatsRepository;
 import com.paul.demo.repository.SeatsRepository;
@@ -74,5 +69,9 @@ public class SeatsService {
         return bookedSeats.stream()
                 .map(AllSeats::getSeatNumber)
                 .collect(Collectors.toList());
+    }
+
+    public List<Seats> getSeatsByBookingId(Long bookingId) {
+        return seatsRepository.findByBookingId(bookingId);
     }
 }

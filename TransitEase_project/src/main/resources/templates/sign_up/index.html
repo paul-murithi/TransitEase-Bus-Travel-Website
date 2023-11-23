@@ -17,6 +17,11 @@
           You have successfully registered on our app!
         </div>
       </div>
+      <div th:if="${param.emailerror}">
+        <div class="alert alert-info">
+          There is already an account registered with the same email
+        </div>
+      </div>
       <h1 class="signup-heading">Create an account</h1>
       <form
         method="POST"

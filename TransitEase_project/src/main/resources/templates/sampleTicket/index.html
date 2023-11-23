@@ -1,0 +1,20 @@
+<!-- ticket.html -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket Details</title>
+  </head>
+  <body>
+    <h1>Ticket Details</h1>
+    <p>Source: <span th:text="${booking.source}"></span></p>
+    <p>Destination: <span th:text="${booking.destination}"></span></p>
+    <p>Date: <span th:text="${booking.date}"></span></p>
+
+    <h2>Selected Seats:</h2>
+    <ul>
+      <li th:each="seat : ${seats}" th:text="${seat.seatNumber}"></li>
+    </ul>
+  </body>
+</html>

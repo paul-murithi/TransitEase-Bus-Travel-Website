@@ -1,5 +1,7 @@
 package com.paul.demo.service.booking;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +18,14 @@ public class BookingService {
         this.bookingRepository = bookingRepository;
     }
 
-    public void saveBooking(Bookings booking) {
-        bookingRepository.save(booking);
+    public Long saveBooking(Bookings booking) {
+        Bookings savedBooking = bookingRepository.save(booking);
+        return savedBooking.getBookingId();
+    }
+
+    public Bookings getBookingById(Long bookingId) {
+        Optional<Bookings> booking = bookingRepository.findById(bookingId);
+        return booking.orElse(null);
     }
 
 }

@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -24,7 +23,6 @@ import com.paul.demo.entity.Seats;
 import com.paul.demo.entity.User;
 import com.paul.demo.entity.seatsStatus.IsVipSeat;
 import com.paul.demo.entity.seatsStatus.SeatStatus;
-import com.paul.demo.repository.SeatsRepository;
 import com.paul.demo.repository.UserRepository;
 import com.paul.demo.service.booking.BookingService;
 import com.paul.demo.service.booking.SeatsService;
@@ -42,9 +40,6 @@ public class BookingController {
 
     @Autowired
     private SeatsService seatsService;
-
-    @Autowired
-    private SeatsRepository seatsRepository;
 
     @GetMapping("/Booking")
     public String bookingController() {
@@ -98,10 +93,9 @@ public class BookingController {
         session.setAttribute("seat", seat);
         String destination = (String) session.getAttribute("to");
         String source = (String) session.getAttribute("from");
-        String dateString = (String) session.getAttribute("date");
+        String date = (String) session.getAttribute("date");
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Date date = dateFormat.parse(dateString);
+        System.out.println(date);
 
         model.addAttribute("to", destination);
         model.addAttribute("from", source);
@@ -163,7 +157,9 @@ public class BookingController {
         seats.setPrice(totalPrice);
 
         seatsService.bookSeats(seats, seatNumbers, booking);
+        Long bookingId = bookingsService.saveBooking(booking);
 
-        return "redirect:/Booking/selectseat/checkout?Booking success";
+        return "redirect:/ticket/" + bookingId;
     }
+
 }

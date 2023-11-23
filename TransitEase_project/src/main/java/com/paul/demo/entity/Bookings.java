@@ -22,7 +22,7 @@ public class Bookings {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "booking_id")
-    private long bookingId;
+    private long id;
 
     private Date date;
     private String source;
@@ -38,6 +38,17 @@ public class Bookings {
     @ManyToMany
     @JoinTable(name = "booking_seats", joinColumns = @JoinColumn(name = "booking_id"), inverseJoinColumns = @JoinColumn(name = "seat_id"))
     private List<AllSeats> allSeats;
+
+    @OneToMany(mappedBy = "booking", cascade = CascadeType.ALL)
+    private List<Tickets> tickets;
+
+    public long getBookingId() {
+        return id;
+    }
+
+    public void setBookingId(long bookingId) {
+        this.id = bookingId;
+    }
 
     public Date getDate() {
         return date;

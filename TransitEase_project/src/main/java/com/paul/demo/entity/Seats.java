@@ -1,9 +1,11 @@
 package com.paul.demo.entity;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import com.paul.demo.entity.seatsStatus.SeatStatus;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -13,6 +15,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -24,7 +27,7 @@ public class Seats {
     private Long seatId;
 
     @ManyToOne
-    @JoinColumn(name = "booking_id")
+    @JoinColumn(name = "booking_id", referencedColumnName = "booking_id")
     private Bookings booking;
 
     @Column(name = "seat_number")
@@ -35,6 +38,9 @@ public class Seats {
 
     @Enumerated(EnumType.STRING)
     private SeatStatus status;
+
+    @OneToMany(mappedBy = "seat", cascade = CascadeType.ALL)
+    private List<Tickets> tickets;
 
     public Seats(Bookings booking, String seatNumber, BigDecimal price, SeatStatus status) {
         this.booking = booking;
