@@ -4,21 +4,21 @@ const destinations = [
     img: "/Assets/images/Rectangle 14 (1).png",
     destinationName: "Nairobi",
     duration: "10 Days Trip",
-    amountSaved: "$5,42k",
+    amountSaved: "20%",
     iconImg: "/Assets/icons/navigation 1.svg",
   },
   {
     img: "/Assets/images/Rectangle 14.jpg",
     destinationName: "Mombasa",
     duration: "10 Days Trip",
-    amountSaved: "$5,42k",
+    amountSaved: "15%",
     iconImg: "/Assets/icons/navigation 1.svg",
   },
   {
     img: "/Assets/images/Rectangle 14.png",
     destinationName: "Meru",
     duration: "10 Days Trip",
-    amountSaved: "$8,42k",
+    amountSaved: "15%",
     iconImg: "/Assets/icons/navigation 1.svg",
   },
 ];
@@ -44,19 +44,22 @@ const customerTestimonials = [
     name: "Michael junior",
     residence: "Meru",
     tripsTravelled: 4,
-    img: "/Assets/icons/Image.svg",
+    img: "/Assets/images/icons8-male-user-100.png",
+    text: "I am thrilled with the platform! The seamless experience, innovative features, and excellent support truly set it apart. Using it has been a game-changer for my business. Highly recommended!",
   },
   {
     name: "Alex taylor",
     residence: "Mombasa",
     tripsTravelled: 6,
-    img: "/Assets/icons/Image.svg",
+    img: "/Assets/images/icons8-male-user-100.png",
+    text: "Exceptional service and outstanding results! The platform exceeded my expectations, providing a user-friendly interface and powerful tools. I appreciate the attention to detail and the positive impact it has had on my workflow.",
   },
   {
     name: "Oscar mwendarubiu",
     residence: "Meru",
     tripsTravelled: 10,
-    img: "/Assets/icons/Image.svg",
+    img: "/Assets/images/icons8-male-user-100.png",
+    text: "The platform is a gem! From its intuitive design to its robust functionality, it has transformed the way I work. The team behind it is dedicated, and the results speak for themselves. I couldn't be happier with my experience.",
   },
 ];
 let customersHTML = "";
@@ -64,7 +67,7 @@ customerTestimonials.forEach((customer) => {
   customersHTML += `
         <div class="testimonials-content">
             <img src="${customer.img}" width="42px" height="42px">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur temporibus, dolorem necessitatibus maiores eaque dignissimos cumque possimus exercitationem iusto vero. Facere nisi corrupti dicta eaque iure recusandae cumque ipsam tempora.</p>
+            <p>${customer.text}</p>
             <h2>${customer.name}</h2>
             <p>${customer.residence}</p>
         </div>

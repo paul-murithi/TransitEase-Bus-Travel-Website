@@ -5,16 +5,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ticket Details</title>
+    <link
+      rel="stylesheet"
+      th:href="@{/Styles/Shared_styles/shared_styles.css}"
+    />
+    <style>
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+    </style>
   </head>
   <body>
-    <h1>Ticket Details</h1>
-    <p>Source: <span th:text="${booking.source}"></span></p>
-    <p>Destination: <span th:text="${booking.destination}"></span></p>
-    <p>Date: <span th:text="${booking.date}"></span></p>
+    <header>
+      <nav id="navigation-menu"></nav>
+    </header>
+    <main>
+      <h1>Ticket Details</h1>
+      <p>Source: <span th:text="${booking.source}"></span></p>
+      <p>Destination: <span th:text="${booking.destination}"></span></p>
+      <p>Date: <span th:text="${booking.date}"></span></p>
+      <h2>Total Amount</h2>
+      <ul>
+        <li th:each="seat : ${seats}" th:text="${seat.price}"></li>
+      </ul>
 
-    <h2>Selected Seats:</h2>
-    <ul>
-      <li th:each="seat : ${seats}" th:text="${seat.seatNumber}"></li>
-    </ul>
+      <h2>Selected Seats:</h2>
+      <ul>
+        <li th:each="seat : ${seats}" th:text="${seat.seatNumber}"></li>
+      </ul>
+    </main>
+
+    <script
+      th:src="@{/scripts/General scripts/generate_navigation.js}"
+    ></script>
   </body>
 </html>

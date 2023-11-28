@@ -13,6 +13,8 @@ import com.paul.demo.entity.Seats;
 import com.paul.demo.service.booking.BookingService;
 import com.paul.demo.service.booking.SeatsService;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class ViewTicket {
 
@@ -23,6 +25,12 @@ public class ViewTicket {
     public ViewTicket(SeatsService seatsService, BookingService bookingService) {
         this.seatsService = seatsService;
         this.bookingService = bookingService;
+    }
+
+    @GetMapping("/showticket")
+    public String holdBookingId(HttpSession session) {
+        Long bookingId = (Long) session.getAttribute("bookingId");
+        return "redirect:/ticket/" + bookingId;
     }
 
     @GetMapping("/ticket/{bookingId}")

@@ -3,6 +3,8 @@ package com.paul.demo.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
+import org.springframework.security.access.vote.RoleVoter;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.Customizer;
@@ -34,7 +36,9 @@ public class SecurityConfig {
 						.requestMatchers("/Home").permitAll()
 						.requestMatchers("/users").hasRole("ADMIN")
 						.requestMatchers("/Assets/**", "/scripts/**", "/Styles/**").permitAll()
-						.requestMatchers("/destinations", "/Booking", "/MyAccount").authenticated().anyRequest()
+						.requestMatchers(HttpMethod.POST, "/Booking/save", "/showticket").permitAll()
+						.requestMatchers("/destinations", "/Booking", "/MyAccount", "/Booking/save").authenticated()
+						.anyRequest()
 						.permitAll())
 
 				.formLogin(
@@ -47,6 +51,7 @@ public class SecurityConfig {
 						logout -> logout
 								.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 								.permitAll());
+
 		return http.build();
 	}
 

@@ -111,6 +111,13 @@ legend {
   margin: 0.5rem;
   font-size: 0.82rem;
 }
+.modal-form .link-button {
+  border: 1.5px solid #f1a501;
+  padding: 0.5rem;
+}
+.modal .ticket-modal-text {
+  margin: 1rem;
+}
 button:hover {
   background-color: #feb310;
 }

@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -106,7 +107,7 @@ public class BookingController {
     }
 
     @PostMapping("/Booking/save")
-    public String saveBooking(HttpSession session, Model model) throws ParseException {
+    public ResponseEntity<String> bookTicket(HttpSession session, Model model) throws ParseException {
 
         String destination = (String) session.getAttribute("to");
         String source = (String) session.getAttribute("from");
@@ -157,9 +158,10 @@ public class BookingController {
         seats.setPrice(totalPrice);
 
         seatsService.bookSeats(seats, seatNumbers, booking);
+
         Long bookingId = bookingsService.saveBooking(booking);
+        session.setAttribute("bookingId", bookingId);
 
-        return "redirect:/ticket/" + bookingId;
+        return ResponseEntity.ok("[{\"sender\": \"localhost\",\"message\": \"success\"}]");
     }
-
 }

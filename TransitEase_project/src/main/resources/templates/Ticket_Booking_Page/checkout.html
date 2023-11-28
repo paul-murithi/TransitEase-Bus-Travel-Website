@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="_csrf" th:content="${_csrf.token}" />
+    <meta name="_csrf_header" th:content="${_csrf.headerName}" />
     <title>checkout</title>
     <link rel="stylesheet" href="/Styles/Shared_styles/shared_styles.css" />
     <link
@@ -26,7 +28,6 @@
               Date of travel: <span th:text="${date}"></span>
             </p>
             <p class="departure-time">Departure time: <span>1700HRS</span></p>
-            <p class="total-cost">Amount: <span>2000</span></p>
           </fieldset>
           <div>
             <fieldset class="terms-and-conditions">
@@ -82,17 +83,11 @@
         <div class="booking-info-details">
           <fieldset class="customer-information">
             <legend>customer details</legend>
-            <form
-              th:action="@{/Booking/save}"
-              class="customer-details"
-              method="post"
-            >
-              <label for="name">Name</label>
-              <input type="text" id="name" />
+            <form class="customer-details" method="post">
               <label for="mpesa-number"
                 >Mobile number <strong>(M-pesa)</strong></label
               >
-              <input type="tel" id="mpesa-number" />
+              <input type="tel" id="mpesa-number" required />
               <p id="errorMessages" style="color: red"></p>
               <div class="checkout-button">
                 <button
@@ -109,18 +104,17 @@
 
         <dialog class="modal">
           <h2>Success! Thankyou for choosing to travel with us</h2>
-          <p>
+          <p class="ticket-modal-text">
             Your ticket has been booked succesfully! A message has been sent to
             your phone with the ticket details. Additionally, you can close this
             modal to download your ticket.
           </p>
-          <form class="modal-form">
-            <button type="button" class="close-modal download-ticket">
-              Exit and download ticket
-            </button>
-            <button class="close-modal redirect-home">
-              Go back to homepage
-            </button>
+          <form class="modal-form" action="/showticket" method="post">
+            <a
+              th:href="@{/showticket}"
+              class="close-modal download-ticket link-button"
+              >Exit and view Ticket</a
+            >
           </form>
         </dialog>
       </div>

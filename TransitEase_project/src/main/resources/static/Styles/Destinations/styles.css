@@ -147,7 +147,7 @@ figure img {
   transition: 250ms;
 }
 .bordered-link:hover {
-  background-color: hsl(0, 0%, 92%);
+  background-color: var(--white);
   color: var(--orange-btn);
   outline: 1.5px solid var(--orange-btn);
 }

@@ -43,8 +43,6 @@ function handleProceed() {
   const selectedSeats = getSelectedSeats();
   saveSelectedSeats(selectedSeats);
 }
-
-/*##########################################################*/
 function showCheckoutPage(seats) {
   if (seats != "") {
     console.log("You have chose seat: " + seats);

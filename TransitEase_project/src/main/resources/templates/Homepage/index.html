@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="_csrf" th:content="${_csrf.token}" />
+    <meta name="_csrf_header" th:content="${_csrf.headerName}" />
     <title>Homepage</title>
     <link rel="stylesheet" th:href="@{/Styles/Homepage/home_styles.css}" />
     <link
-    
       rel="stylesheet"
       th:href="@{/Styles/Shared_styles/shared_styles.css}"
     />
@@ -61,22 +62,38 @@
         <div class="category-1 services">
           <img src="/Assets/icons/Group 48.svg" alt="calculated weather" />
           <h1>Comprehensive Bus Route Network</h1>
-          <p>Built wicket longer admire do bartonvanity do on it</p>
+          <p>
+            Our extensive bus route network ensures connectivity to various
+            destinations, providing you with a wide range of travel options and
+            seamless journeys.
+          </p>
         </div>
         <div class="category-2 services">
           <img src="/Assets/icons/Group 48.svg" alt="calculated weather" />
           <h1>Seamless Ticket Booking</h1>
-          <p>Built wicket longer admire do bartonvanity do on it</p>
+          <p>
+            Experience hassle-free travel with our seamless ticket booking
+            system. Effortlessly reserve your seats and enjoy a smooth,
+            efficient process from start to finish.
+          </p>
         </div>
         <div class="category-3 services">
           <img src="/Assets/icons/Group 48.svg" alt="calculated weather" />
           <h1>Convenient Travel Management</h1>
-          <p>Built wicket longer admire do bartonvanity do on it</p>
+          <p>
+            Simplify your travel experience with our convenient management
+            tools. Easily track and manage your trips, ensuring a stress-free
+            and organized journey every time.
+          </p>
         </div>
         <div class="category-4 services">
           <img src="/Assets/icons/Group 48.svg" alt="customizations" />
           <h1>Choose from your favourite buses</h1>
-          <p>Built wicket longer admire do bartonvanity do on it</p>
+          <p>
+            Tailor your journey to your preferences by choosing from a diverse
+            selection of buses. Enjoy comfort, reliability, and personalized
+            travel options with our extensive fleet.
+          </p>
         </div>
       </div>
       <div class="category-services-headers">
