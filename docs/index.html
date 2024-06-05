@@ -1,243 +1,320 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project landing page</title>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
       body {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-          sans-serif;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
       }
-      nav {
-        display: flex;
-        justify-content: space-evenly;
-      }
-      nav a {
-        color: #000;
-        font-size: 1.125rem;
-      }
-      nav a:hover {
-        color: #f1a501;
-      }
+
       header {
+        background-color: #333;
+        color: #fff;
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 9999;
+      }
+
+      header h1 {
         text-align: center;
       }
-      header h1 {
-        font-size: 1.425rem;
-        text-transform: capitalize;
+
+      nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
       }
-      header h2 {
-        margin: 0;
-        font-size: 1.2em;
-        color: #666;
+
+      nav ul li {
+        margin: 0 1rem;
       }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+      }
+
+      nav ul li a:hover {
+        background-color: #444;
+      }
+
       main {
-        padding: 20px;
-        width: 85%;
-        margin: auto;
+        padding: 2rem;
+        text-align: center;
       }
+
+      #cover {
+        position: relative;
+        text-align: center;
+        color: white;
+        background-image: url();
+      }
+
+      #cover::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
+
+      #cover img {
+        width: 100%;
+        height: auto;
+        opacity: 0.8;
+        display: block;
+      }
+
+      #cover h1,
+      #cover p,
+      #cover button {
+        position: relative;
+        z-index: 2;
+      }
+
+      #cover h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 3rem;
+        font-weight: bold;
+      }
+
+      #cover p {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.5rem;
+      }
+
+      #cover button {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #f1a501;
+        color: #fff;
+        border: none;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      #cover button:hover {
+        background-color: #e59400;
+      }
+
       section {
-        margin-bottom: 20px;
+        margin: 2rem 0;
       }
 
-      section h2 {
-        font-size: 1.5em;
-        color: #333;
-        margin-bottom: 10px;
+      h2 {
+        margin-bottom: 1rem;
       }
 
-      section p,
-      section ul {
-        font-size: 1em;
+      p {
+        max-width: 600px;
+        margin: 0 auto;
         line-height: 1.6;
-        color: #555;
       }
 
-      ul {
-        padding-left: 20px;
+      .feature {
+        margin: 2rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
-      ul li {
-        margin-bottom: 10px;
+      .feature img {
+        width: 100%;
       }
 
-      ul li strong {
-        color: #333;
+      .feature h3 {
+        margin-top: 1rem;
+      }
+
+      .team-links ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .team-links ul li {
+        display: inline;
+        margin: 0 1rem;
+      }
+
+      .team-links ul li a {
+        color: #0073b1;
+        text-decoration: none;
+      }
+
+      .team-links ul li a:hover {
+        text-decoration: underline;
+      }
+
+      .project-repo a {
+        color: #24292e;
+        text-decoration: none;
+      }
+
+      .project-repo a:hover {
+        text-decoration: underline;
       }
     </style>
   </head>
   <body>
     <header>
       <h1>Portfolio Project Landing Page</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">About Project</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#developer">About Developer</a></li>
+        </ul>
+      </nav>
     </header>
-    <nav>
-      <a href="https://github.com/paul-murithi/TransitEase-Bus-Travel-Website">Project's Homepage</a>
-      <a
-        href="https://github.com/paul-murithi/TransitEase-Bus-Travel-Website"
-        target="_blank"
-        >Project's GitHub link</a
-      >
-      <a href="https://github.com/paul-murithi/TransitEase-Bus-Travel-Website">Project's Screenshots</a>
-    </nav>
+
     <main>
-      <div class="Introduction">
-        <section>
-          <h2>Introduction</h2>
+      <section id="cover">
+        <img
+          src="/docs/assets/bus_booking_cover_image.webp"
+          alt="Bus Booking System Cover Image"
+        />
+        <div class="hero-content"></div>
+        <h1>Bus Booking System</h1>
+        <p>Your convenient way to book bus tickets online.</p>
+        <button class="demo-button">
+          Live Demo
+        </button>
+      </section>
+      <section id="about">
+        <h2>About the Project</h2>
+        <p>
+          The Bus Booking System is a comprehensive platform designed to
+          simplify the process of booking bus tickets online. Users can search
+          for available routes, select buses, choose seats, and complete their
+          booking with ease. The system ensures a seamless and user-friendly
+          experience, making bus travel more convenient than ever.
+        </p>
+      </section>
+      <section id="developer">
+        <h2>About the Developer</h2>
+        <p>
+          I am Paul Murithi Kirera, a passionate web developer with a focus on
+          creating impactful and user-centric applications. With a strong
+          background in both front-end and back-end development, I aim to
+          deliver high-quality projects that solve real-world problems. This Bus
+          Booking System project showcases my skills in full-stack development
+          and my dedication to providing excellent user experiences.
+        </p>
+      </section>
+
+      <section id="features">
+        <h2>Key Features</h2>
+        <div class="feature">
+          <img src="/docs/assets/feature1_image.png" alt="Feature 1 Image" />
+          <h3>Feature 1</h3>
           <p>
-            Welcome to the landing page of my innovative Bus Booking System!
-            This project is designed to revolutionize the way users book bus
-            tickets, making the process seamless, efficient, and user-friendly.
-            Below, we share key information about our project, its purpose, and
-            the features that make it stand out.
+            This feature allows users to search for available bus routes and
+            schedules, providing a seamless and user-friendly experience.
           </p>
-        </section>
-        <section>
-          <h2>Project Overview</h2>
+        </div>
+        <div class="feature">
+          <img src="/docs/assets/feature2_image.png" alt="Feature 2 Image" />
+          <h3>Feature 2</h3>
           <p>
-            The Bus Booking System is a web-based application developed to
-            simplify the bus ticket booking process for users. It provides a
-            comprehensive solution for searching, booking, and managing bus
-            tickets. The project leverages modern web technologies to ensure a
-            smooth and intuitive user experience.
+            This feature lets users select their preferred seats from an
+            interactive seating arrangement map.
           </p>
-        </section>
-        <section>
-          <h2>Purpose and Goals</h2>
+        </div>
+        <div class="feature">
+          <img src="/docs/assets/feature3_image.png" alt="Feature 3 Image" />
+          <h3>Feature 3</h3>
+          <p>
+            Users can securely make payments for their bookings through various
+            payment options available in the system.
+          </p>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2>About the Project</h2>
+        <p>
+          The Bus Booking System is a comprehensive platform designed to
+          simplify the process of booking bus tickets online. Users can search
+          for available routes, select buses, choose seats, and complete their
+          booking with ease. The system ensures a seamless and user-friendly
+          experience, making bus travel more convenient than ever.
+        </p>
+        <p>
+          This project was inspired by the need to provide a more efficient and
+          accessible way for people to book bus tickets. During my University
+          days, I used bus services to book and travel through a company based
+          near my area. The company relied on a manual booking process where in
+          order for users to book, they had to physically visit their offices,
+          where the person in charge would check for manual recordings if there
+          are any buses available. If any buses available, one would be Issued a
+          physical ticket written on a piece of paper to show during travelling
+          day. The customer then proceeds to paying using physical cash. 
+          <p>
+            While this method is effective and serves it's purpose, it is cumbersome both to the User and the administrators. Users have to be physically present during the whole booking process and errors are prone during the process. This arises the need to streamline that process, where users can book tickets from the comfort of their homes.
+          </p>
+          <p>This
+            project is also a part of my portfolio for Holberton School,
+            demonstrating my skills in full-stack development.</p>
+        </p>
+        <div class="team-links" style="margin-top: 1rem;">
+          <h3>Connect with the Developer</h3>
           <ul>
             <li>
-              <strong>Enhance User Convenience</strong>: Offer an
-              easy-to-navigate interface that allows users to search for bus
-              routes, select seats, and make payments effortlessly.
+              <a href="https://www.linkedin.com/in/paul-murithi-015938241" target="_blank"
+                >LinkedIn</a
+              >
             </li>
             <li>
-              <strong>Improve Efficiency</strong>: Streamline the booking
-              process to reduce the time and effort required for users to secure
-              their bus tickets.
+              <a href="https://github.com/paul-murithi" target="_blank"
+                >GitHub</a
+              >
             </li>
             <li>
-              <strong>Provide Comprehensive Information</strong>: Ensure users
-              have access to all necessary information about bus routes,
-              schedules, and seat availability in one place.
-            </li>
-            <li>
-              <strong>Ensure Secure Transactions</strong>: Implement robust
-              security measures to protect user data and ensure secure payment
-              processing.
+              <a href="https://twitter.com/your-profile" target="_blank"
+                >Twitter</a
+              >
             </li>
           </ul>
-        </section>
-        <section>
-          <h2>Key Features</h2>
-          <ul>
-            <li>
-              <strong>User Authentication</strong>: Secure login and sign-up
-              functionality to manage user accounts.
-            </li>
-            <li>
-              <strong>Search and Select Routes</strong>: Users can search for
-              available bus routes by entering their departure location,
-              destination, and travel date.
-            </li>
-            <li>
-              <strong>Bus and Seat Selection</strong>: Display available buses
-              for selected routes and allow users to choose their preferred
-              seats.
-            </li>
-            <li>
-              <strong>Real-Time Availability</strong>: Show real-time
-              availability of seats to avoid overbooking.
-            </li>
-            <li>
-              <strong>Payment Processing</strong>: Integration with payment
-              gateways to facilitate secure transactions.
-            </li>
-            <li>
-              <strong>Booking Confirmation</strong>: Provide detailed booking
-              confirmation and reference numbers for user records.
-            </li>
-            <li>
-              <strong>User-Friendly Interface</strong>: A responsive and
-              intuitive design that ensures a seamless experience across all
-              devices.
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Technologies Used</h2>
-          <ul>
-            <li>
-              <strong>Frontend</strong>: Spring's thymeleaf for building a
-              dynamic and responsive user interface.
-            </li>
-            <li>
-              <strong>Backend</strong>: Spring Boot for a robust and scalable
-              backend infrastructure.
-            </li>
-            <li>
-              <strong>Database</strong>: MySQL for efficient data storage and
-              retrieval.
-            </li>
-            <li>
-              <strong>APIs</strong>: RESTful APIs to handle communication
-              between the frontend and backend.
-            </li>
-            <li>
-              <strong>Security</strong>: Implementation of security best
-              practices to protect user data and ensure safe transactions.
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Conclusion</h2>
-          <p>
-            The Bus Booking System is a step towards making bus ticket booking
-            more accessible and efficient for users. By combining modern web
-            technologies with a user-centric approach, we aim to provide a
-            superior booking experience. We are excited to share our journey and
-            the innovative features of our project through this landing page.
-          </p>
-        </section>
-      </div>
-      <div class="about">
-        <section>
-          <h2>About the Developer</h2>
-          <p>
-            Hi, I'm Kirera Paul Murithi, a passionate software developer with a
-            strong interest in web development and creating user-friendly
-            applications. My journey into the world of coding started when I
-            joined university to pursue a diploma in computer science.
-          </p>
-
-          <p>
-            I pursued my passion by studying Computer Science at Technical
-            University of Mombasa, where I honed my skills in various
-            programming languages and technologies. During my time at
-            university, I participated in several hackathons and coding
-            competitions, which helped me to develop a problem-solving mindset
-            and the ability to work effectively under pressure.
-          </p>
-
-          <p>
-            In my spare time, I enjoy contributing to open-source projects and
-            staying updated with the latest trends in technology. I believe in
-            continuous learning and always strive to improve my skills and
-            knowledge. This project, the Bus Booking System, is a reflection of
-            my dedication to delivering high-quality, user-centric solutions.
-          </p>
-
-          <p>
-            I am excited to share this project with you and look forward to any
-            feedback or collaboration opportunities. Feel free to connect with
-            me on
-            <a href="mailto:paulmurithi518@gmail.com"
-              >paulmurithi518@gmail.com</a
-            >
-            to discuss this project or any other ideas you might have!
-          </p>
-        </section>
-      </div>
+        </div>
+        <div class="project-repo">
+          <h3>Project Repository</h3>
+          <a href="https://github.com/paul-murithi/TransitEase-Bus-Travel-Website?" target="_blank"
+            >GitHub Repository</a
+          >
+        </div>
+      </section>
     </main>
+    <script>
+      const demoButoon = document.querySelector(".demo-button").addEventListener("click", () => {
+        console.log("button clicked!")
+          // window.location.href=""
+        })
+    </script>
   </body>
 </html>

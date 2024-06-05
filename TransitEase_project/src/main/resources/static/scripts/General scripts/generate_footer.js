@@ -73,8 +73,10 @@ function createSocialLinks(title, platforms) {
 generateFooter();
 
 function generateAuthorContent() {
+  const date = new Date();
+  date.toISOString();
   let contentParagraphs = `
-  <p class="author">Designed and created by Kirera Paul Murithi &copy;2023</p>
+  <p class="author">Designed and created by Kirera Paul Murithi &copy; 2024</p>
   <p class="author">Email:<a href="#">paulmurithi233@gmail.com</a></p>
   `;
 
