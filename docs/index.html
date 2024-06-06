@@ -56,14 +56,14 @@
         text-align: center;
       }
 
-      #cover {
-        position: relative;
-        text-align: center;
-        color: white;
-        background-image: url();
-      }
 
-      #cover::before {
+      #cover {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+#cover::before {
         content: "";
         position: absolute;
         top: 0;
@@ -74,50 +74,75 @@
         z-index: 1;
       }
 
-      #cover img {
-        width: 100%;
-        height: auto;
-        opacity: 0.8;
-        display: block;
-      }
+#cover img { 
+    width: 100%;
+    height: auto;
+    opacity: 0.8;
+    display: block;
+}
 
-      #cover h1,
-      #cover p,
-      #cover button {
-        position: relative;
-        z-index: 2;
-      }
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
 
-      #cover h1 {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+#cover h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+#cover p {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+
+#cover button {
+    background-color: #f1a501;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+@media (min-width: 768px) {
+    #cover h1 {
         font-size: 3rem;
-        font-weight: bold;
-      }
+    }
 
-      #cover p {
-        position: absolute;
-        top: 70%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    #cover p {
         font-size: 1.5rem;
-      }
+    }
 
-      #cover button {
-        position: absolute;
-        top: 80%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #f1a501;
-        color: #fff;
-        border: none;
+    #cover button {
         padding: 1rem 2rem;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    #cover h1 {
+        font-size: 2rem;
+    }
+
+    #cover p {
         font-size: 1rem;
-        cursor: pointer;
-        border-radius: 5px;
-      }
+    }
+
+    #cover button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+     
 
       #cover button:hover {
         background-color: #e59400;
@@ -196,16 +221,17 @@
     <main>
       <section id="cover">
         <img
-          src="assets/bus_booking_cover_image.webp"
-          alt="Bus Booking System Cover Image"
+            src="assets/bus_booking_cover_image.webp"
+            alt="Bus Booking System Cover Image"
         />
-        <div class="hero-content"></div>
-        <h1>Bus Booking System</h1>
-        <p>Your convenient way to book bus tickets online.</p>
-        <button class="demo-button">
-          Live Demo
-        </button>
-      </section>
+        <div class="hero-content">
+            <h1>Bus Booking System</h1>
+            <p>Your convenient way to book bus tickets online.</p>
+            <button class="demo-button">
+                Live Demo
+            </button>
+        </div>
+    </section>
       <section id="about">
         <h2>About the Project</h2>
         <p>
