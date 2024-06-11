@@ -49,7 +49,8 @@ Configure the database connection in the backend application (application.proper
 Contributions to the TransitEase Travel Agency Website project are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue on the GitHub repository.
 
 ## Design Credits
-The UI design for this project was inspired by the [Travel Website Landing Page](https://www.figma.com/design/IPgB5kmdldVqAQZTnTsDP8/Travel-Website-Landing-Page-(Community)?node-id=0-1&t=p7VHeOXGAh2sRQyu-0){:target="_blank"} by the Figma Community. Special thanks to the original designer for the inspiration.
+Design Credit: The UI design for this project was inspired by the [Travel Website Landing Page](https://www.figma.com/design/IPgB5kmdldVqAQZTnTsDP8/Travel-Website-Landing-Page-(Community)?node-id=0-1&t=p7VHeOXGAh2sRQyu-0) by the Figma Community. Special thanks to the original designer for the inspiration.
+
 
 ## NOTE:
 
