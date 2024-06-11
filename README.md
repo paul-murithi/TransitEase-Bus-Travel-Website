@@ -60,3 +60,6 @@ TransitEase is not a real company, This is a hypothetical company created to hel
 ![Screenshot (46)](https://github.com/paul-murithi/TransitEase-Bus-Travel-Website/assets/114237403/728a4557-4312-4533-82ff-a197b0389d1d)
 ![Screenshot (47)](https://github.com/paul-murithi/TransitEase-Bus-Travel-Website/assets/114237403/6f5c833d-12db-4ac3-8ab6-79fab2f707ce)
 ![Screenshot (48)](https://github.com/paul-murithi/TransitEase-Bus-Travel-Website/assets/114237403/26810fa0-6ebc-41b1-b7fc-4c4018d60494)
+
+## Design Credits
+The UI design for this project was inspired by the [Travel Website Landing Page](https://www.figma.com/design/IPgB5kmdldVqAQZTnTsDP8/Travel-Website-Landing-Page-(Community)?node-id=0-1&t=p7VHeOXGAh2sRQyu-0) by the Figma Community. Special thanks to the original designer for the inspiration.
