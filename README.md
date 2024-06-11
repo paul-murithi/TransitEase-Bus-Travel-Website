@@ -32,9 +32,17 @@ To run the TransitEase Travel Agency Website locally on your machine, follow the
 1. Clone the repository:
 
 git clone https://github.com/paul-murithi/TransitEase-Bus-Travel-Website
-Set up the backend server by following the instructions in the backend/README.md file.
 
-Configure the database connection in the backend application.
+Configure the database connection in the backend application (application.properties file).
+
+**Start the backend server**:
+    Navigate to the backend directory and run the Spring Boot application.
+    ```bash
+    ./mvnw spring-boot:run
+    ```
+**Access the application**:
+    Open your web browser and navigate to `http://localhost:8080/home` to use the TransitEase Travel Agency Website.
+
 
 ## Contributing
 
