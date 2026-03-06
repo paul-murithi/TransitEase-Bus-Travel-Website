@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="ISO-8859-1" />
-    <title>Account profile</title>
-    <link rel="stylesheet" href="/Styles/Shared_styles/shared_styles.css" />
+  <head th:replace="~{common/fragments :: head('Account profile')}">
     <link rel="stylesheet" href="/Styles/account_profile/my_profile.css" />
-    <script
-      src="/scripts/General scripts/generate_navigation.js"
-      defer
-    ></script>
   </head>
   <body>
     <header>
-      <nav id="navigation-menu"></nav>
+      <nav th:replace="~{common/fragments :: navigation}"></nav>
     </header>
 
     <div class="profile-picture">
@@ -97,6 +90,7 @@
       </div>
     </fieldset>
 
+    <div th:replace="~{common/fragments :: scripts}"></div>
     <script src="/scripts/accountProfile/script.js"></script>
   </body>
 </html>

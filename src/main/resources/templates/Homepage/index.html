@@ -1,22 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="_csrf" th:content="${_csrf.token}" />
-    <meta name="_csrf_header" th:content="${_csrf.headerName}" />
-    <title>Homepage</title>
+  <head th:replace="~{common/fragments :: head('Homepage')}">
     <link rel="stylesheet" th:href="@{/Styles/Homepage/home_styles.css}" />
-    <link
-      rel="stylesheet"
-      th:href="@{/Styles/Shared_styles/shared_styles.css}"
-    />
   </head>
 
   <body>
     <header>
-      <nav id="navigation-menu"></nav>
-      <!-- To be generated dynamically  -->
+      <nav th:replace="~{common/fragments :: navigation}"></nav>
 
       <div class="main">
         <div class="banner-container">
@@ -198,10 +188,7 @@
       </div>
     </main>
     <div class="hr-line"></div>
-    <script
-      th:src="@{/scripts/General scripts/generate_navigation.js}"
-    ></script>
-    <script th:src="@{/scripts/General scripts/generate_footer.js}"></script>
+    <div th:replace="~{common/fragments :: scripts}"></div>
     <script th:src="@{/scripts/Homepage/script.js}"></script>
   </body>
 </html>

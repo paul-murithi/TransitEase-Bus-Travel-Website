@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title)">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="_csrf" th:content="${_csrf.token}" />
+    <meta name="_csrf_header" th:content="${_csrf.headerName}" />
+    <title th:text="${title}">TransitEase</title>
+    <link rel="stylesheet" th:href="@{/Styles/Shared_styles/shared_styles.css}" />
+</head>
+
+<body>
+    <nav th:fragment="navigation" id="navigation-menu"></nav>
+
+    <div th:fragment="scripts">
+        <script th:src="@{/scripts/General scripts/generate_navigation.js}"></script>
+        <script th:src="@{/scripts/General scripts/generate_footer.js}"></script>
+    </div>
+</body>
+</html>

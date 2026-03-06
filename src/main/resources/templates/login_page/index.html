@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Log in</title>
+  <head th:replace="~{common/fragments :: head('Log in')}">
     <link rel="stylesheet" th:href="@{/Styles/LoginPage/login.css}" />
-    <link
-      rel="stylesheet"
-      th:href="@{/Styles/Shared_styles/shared_styles.css}"
-    />
   </head>
 
   <body>
     <!--navigation links-->
-    <nav id="navigation-menu"></nav>
+    <nav th:replace="~{common/fragments :: navigation}"></nav>
     <!--form input elements-->
     <div class="parent-container">
       <div class="login-container login-opacity-true">
@@ -71,9 +64,7 @@
       </div>
     </div>
 
-    <script
-      th:src="@{/scripts/General scripts/generate_navigation.js}"
-    ></script>
+    <div th:replace="~{common/fragments :: scripts}"></div>
     <script src="/scripts/logInPage/login.js"></script>
   </body>
 </html>

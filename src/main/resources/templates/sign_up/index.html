@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign up</title>
+  <head th:replace="~{common/fragments :: head('Sign up')}">
     <link rel="stylesheet" href="/Styles/SignupPage/signup.css" />
-    <link rel="stylesheet" href="/Styles/Shared_styles/shared_styles.css" />
   </head>
 
   <body>
-    <nav id="navigation-menu"></nav>
+    <nav th:replace="~{common/fragments :: navigation}"></nav>
 
     <main class="signup-container">
       <div th:if="${param.success}">
@@ -143,7 +139,7 @@
       </p>
     </main>
 
-    <script src="/scripts/General scripts/generate_navigation.js"></script>
+    <div th:replace="~{common/fragments :: scripts}"></div>
     <script src="/scripts/signUpPage/signUp.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {

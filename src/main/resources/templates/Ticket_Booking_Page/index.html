@@ -1,24 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ticket booking page</title>
-    <link rel="stylesheet" href="/Styles/Shared_styles/shared_styles.css" />
+  <head th:replace="~{common/fragments :: head('Ticket booking page')}">
     <link
       rel="stylesheet"
       href="/Styles/TicketBookingPage/homepage/ticket_booking_page.css"
     />
-    <script
-      src="/scripts/General scripts/generate_navigation.js"
-      defer
-    ></script>
-    <!-- <script src="/scripts/generata_navigation.js" defer></script>
-    <script src="/scripts/select_seats.js" defer></script> -->
   </head>
 
   <body>
-    <nav id="navigation-menu"></nav>
+    <nav th:replace="~{common/fragments :: navigation}"></nav>
     <main>
       <div class="page-container">
         <div class="travel-info">
@@ -79,6 +69,7 @@
         </div>
       </div>
     </main>
+    <div th:replace="~{common/fragments :: scripts}"></div>
     <script src="/scripts/TicketBookingPage/script.js"></script>
   </body>
 </html>
